@@ -13,6 +13,7 @@ class DACOutput : public util::Peripheral {
 public:
     virtual void Start() = 0;
     virtual void Set(float value) = 0;
+    virtual float Get() = 0;
     virtual void Stop() = 0;
 };
 
