@@ -1,6 +1,4 @@
-# racecar
-
-Monorepo for all firmware running on our custom ECUs
+# ann-firmware
 
 ## Documentation
 
