@@ -31,11 +31,13 @@ namespace shared::device {
  *                      |
  *   Terminal(B)___/ ___|
  */
+
+
 template <typename PotIndexT, typename ResolutionT>
     requires(std::unsigned_integral<PotIndexT> ||
              std::unsigned_integral<std::underlying_type_t<PotIndexT>>) &&
             std::unsigned_integral<ResolutionT>
-class DigitalPotentiometer : public util::Device {
+class DigitalPotentiometerController : public util::Device {
 public:
     enum class Terminal {
         A,
@@ -52,5 +54,8 @@ public:
                                         bool terminalConnectedB,
                                         bool terminalConnectedW) = 0;
 };
+
+
+
 
 }  // namespace shared::device

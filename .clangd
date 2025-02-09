@@ -1,0 +1,25 @@
+CompileFlags:
+    Add: 
+        - -std=c++20
+        - -I./firmware/shared
+        - -I./firmware/shared/comms
+        - -I./firmware/shared/comms/can
+        - -I./firmware/shared/comms/i2c
+        - -I./firmware/shared/controls
+        - -I./firmware/shared/device
+        - -I./firmware/shared/device/mcp
+        - -I./firmware/shared/device/ti
+        - -I./firmware/shared/os
+        - -I./firmware/shared/periph
+        - -I./firmware/shared/util
+        - -I./firmware/shared/util/mappers
+        - -I./firmware/tests
+        - -I./firmware/tests/firmware
+        - -I./firmware/tests/firmware/shared
+        - -I./firmware/tests/firmware/shared/util
+        - -I./firmware/tests/firmware/shared/util/mappers
+        - -I./firmware/tests/googletest
+        - -I./firmware/third-party
+        - -I./firmware/third-party/etl
+        - -I./firmware/validation
+        - -I./firmware/validation/sil

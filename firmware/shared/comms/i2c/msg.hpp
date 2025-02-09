@@ -15,7 +15,7 @@ enum class MessageType {
     Write,
 };
 
-struct Message {
+class Message {
     // Pure virtual template method that derived classes must implement
     template <size_t N>
     Message(uint8_t address, uint8_t (&data)[N], MessageType type)
