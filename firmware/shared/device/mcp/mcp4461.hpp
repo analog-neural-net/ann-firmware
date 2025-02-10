@@ -6,7 +6,6 @@
 #include "shared/comms/i2c/msg.hpp"
 #include "shared/device/digital_pot.hpp"
 
-#include <stdint.h>
 
 namespace shared::device::mcp {
 
@@ -48,19 +47,19 @@ class MCP4461 : public DigitalPotentiometerController<MCP4461Wiper, uint8_t> {
 private:
 
     void writeRegister(MCP4461Register reg, uint8_t data) {
-        i2c::Message msg;
         uint8_t transmission[2];
         transmission[0] = (static_cast<uint8_t>(reg) << 4) | (static_cast<uint8_t>(MCP4461Command::WRITE_REGISTER) << 2);
         
         transmission[1] = data;
 
-        msg = i2c::Message(pot_i2c_address_, transmission, i2c::MessageType::Write);
+        i2c::Message msg = i2c::Message(pot_i2c_address_, transmission, i2c::MessageType::Write);
         i2c_bus_.Write(msg);
     }
 
     uint8_t readRegister(MCP4461Register reg) {
         
-        uint8_t transmission_request = (static_cast<uint8_t>(reg) << 4) | (static_cast<uint8_t>(MCP4461Command::READ_REGISTER) << 2);
+        uint8_t transmission_request[1];
+        transmission_request[0] = (static_cast<uint8_t>(reg) << 4) | (static_cast<uint8_t>(MCP4461Command::READ_REGISTER) << 2);
         uint8_t read_data[2];
 
         i2c::Message request  = i2c::Message(pot_i2c_address_, transmission_request, i2c::MessageType::Write);
@@ -78,12 +77,12 @@ public:
         TERMINAL_B = 0x0
     };
 
-    void SetPosition(MCP4461Wiper pot_index, uint8_t position) override {
-        writeRegister(pot_index, position);
+    void SetPosition(uint8_t pot_index, uint8_t position) override {
+        writeRegister((MCP4461Wiper) pot_index, position);
     }
 
     uint8_t GetPosition(MCP4461Wiper pot_index) override {
-        return readRegister(pot_index);
+        return readRegister((MCP4461Wiper) pot_index);
     }
 
     uint8_t GetWiperTerminalConfig(MCP4461Wiper pot_index)  {

@@ -16,6 +16,7 @@ enum class MessageType {
 };
 
 class Message {
+public:
     // Pure virtual template method that derived classes must implement
     template <size_t N>
     Message(uint8_t address, uint8_t (&data)[N], MessageType type)
@@ -42,7 +43,7 @@ public:
         return data_length_;
     }
 
-    const uint8_t* Data() const {
+    uint8_t* Data() const {
         return data_;
     }
 

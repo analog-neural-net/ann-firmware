@@ -1,6 +1,5 @@
 #pragma once
 
-#include <_types/_uint8_t.h>
 
 #include "shared/device/i2c_mux.hpp"
 #include "shared/periph/i2c.hpp"

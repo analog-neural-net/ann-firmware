@@ -18,7 +18,7 @@ public:
     I2C(I2C_HandleTypeDef* hi2c) : hi2c_(hi2c) {}
 
     void Write(const shared::i2c::Message& msg) override {
-        HAL_I2C_Master_Transmit(hi2c_, msg.Address() << 1, msg.Data(), msg.DataLength(), HAL_MAX_DELAY);
+        HAL_I2C_Master_Transmit(hi2c_, msg.Address() << 1, msg.Data(),  msg.DataLength(), HAL_MAX_DELAY);
     }
 
     void Read(shared::i2c::Message& msg) override {
