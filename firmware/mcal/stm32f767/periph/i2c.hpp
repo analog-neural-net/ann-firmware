@@ -25,7 +25,6 @@ public:
         HAL_I2C_Master_Receive(hi2c_, (msg.Address() << 1) | 0x1, msg.Data(), msg.DataLength(), HAL_MAX_DELAY);
     }
 
-
 };
 
 }  // namespace mcal::stm32f767::periph

@@ -46,6 +46,7 @@ public:
         return data_;
     }
 
+    
     // Pure virtual template method that derived classes must implement
     template <size_t N>
     bool SetData(const uint8_t (&new_data)[N]) {
