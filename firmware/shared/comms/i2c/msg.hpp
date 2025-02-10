@@ -42,7 +42,7 @@ public:
         return data_length_;
     }
 
-    const uint8_t* Data() const {
+    uint8_t* Data() const {
         return data_;
     }
 
