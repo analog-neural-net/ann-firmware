@@ -25,10 +25,10 @@ struct Message {
     Message() = delete;
 
 private:
-    MessageType type_;
     uint8_t address_;
     uint8_t data_length_;
     uint8_t* data_;
+    MessageType type_;
 
 public:
     MessageType Type() const {
@@ -42,7 +42,7 @@ public:
         return data_length_;
     }
 
-    const uint8_t* Data() const {
+    uint8_t* Data() const {
         return data_;
     }
 
@@ -63,10 +63,13 @@ public:
 
         // Format message type
         if (type_ == MessageType::Write) {
-            ss << " WR ->";
+            ss << " WR -> ";
         } else {
-            ss << " RD <-";
+            ss << " RD <- ";
         }
+
+        // Format data length
+        ss << "(" << static_cast<int>(data_length_) << ")";
 
         // Format data
         for (size_t i = 0; i < data_length_; ++i) {
