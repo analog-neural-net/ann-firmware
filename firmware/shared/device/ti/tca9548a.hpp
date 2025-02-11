@@ -1,7 +1,5 @@
 #pragma once
 
-#include <_types/_uint8_t.h>
-
 #include "shared/device/i2c_mux.hpp"
 #include "shared/periph/i2c.hpp"
 
@@ -31,7 +29,8 @@ public:
              bool force_select = false)
         : I2CMultiplexer<TCA9548AChannel>(i2c_bus, mux_address),
           channel_status_(ChannelStatus::UNSELECTED),
-          channel_selected_(TCA9548AChannel::INVALID) {}
+          channel_selected_(TCA9548AChannel::INVALID),
+          force_select_(force_select) {}
 
     void WriteToChannel(TCA9548AChannel channel,
                         const shared::i2c::Message& msg) override {
@@ -88,8 +87,8 @@ private:
         channel_selected_ = TCA9548AChannel::INVALID;
     }
 
-    TCA9548AChannel channel_selected_;
     ChannelStatus channel_status_;
+    TCA9548AChannel channel_selected_;
     bool force_select_;
 };
 
