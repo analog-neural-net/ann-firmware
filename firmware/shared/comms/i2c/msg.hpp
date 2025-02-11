@@ -19,7 +19,7 @@ struct Message {
     // Pure virtual template method that derived classes must implement
     template <size_t N>
     Message(uint8_t address, uint8_t (&data)[N], MessageType type)
-        : address_(address), data_length_(N), data_(data), type_(type) {}
+        : type_(type), address_(address), data_length_(N), data_(data) {}
 
     // Delete default constructor
     Message() = delete;
@@ -46,7 +46,7 @@ public:
         return data_;
     }
 
-    
+
     // Pure virtual template method that derived classes must implement
     template <size_t N>
     bool SetData(const uint8_t (&new_data)[N]) {
