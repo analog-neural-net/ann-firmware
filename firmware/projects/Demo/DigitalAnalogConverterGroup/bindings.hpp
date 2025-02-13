@@ -20,7 +20,6 @@ extern shared::periph::DigitalOutput& led_position0;
 extern shared::periph::DigitalOutput& led_position1;
 extern shared::periph::DigitalOutput& led_position2;
 
-extern shared::periph::PWMOutput& pwm_output0;
 
 extern shared::periph::AnalogOutputGroup<kNumAnalogOutputs>&
     analog_output_group;

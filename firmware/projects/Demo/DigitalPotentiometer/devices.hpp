@@ -8,5 +8,9 @@ namespace device {
 
 extern shared::device::DigitalPotentiometer<uint8_t> digital_pot0;
 extern shared::device::DigitalPotentiometer<uint8_t> digital_pot1;
+extern shared::device::DigitalPotentiometer<uint8_t> digital_pot2;
+extern shared::device::DigitalPotentiometer<uint8_t> digital_pot3;
+
+
 
 }  // namespace devices

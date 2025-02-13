@@ -18,5 +18,9 @@ shared::device::DigitalPotentiometer<uint8_t> digital_pot0(
     digital_pot_controller, 0);
 shared::device::DigitalPotentiometer<uint8_t> digital_pot1(
     digital_pot_controller, 1);
+shared::device::DigitalPotentiometer<uint8_t> digital_pot2(
+    digital_pot_controller, 2);
+shared::device::DigitalPotentiometer<uint8_t> digital_pot3(
+    digital_pot_controller, 3);
 
 }  // namespace device
