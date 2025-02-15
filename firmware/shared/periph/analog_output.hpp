@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <_types/_uint8_t.h>
-
 #include <cstdint>
 
 #include "shared/util/peripheral.hpp"

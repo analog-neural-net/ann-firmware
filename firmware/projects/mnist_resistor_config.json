@@ -1,0 +1,4076 @@
+{
+  "metadata": {
+    "date_trained": "2024-01-30",
+    "achieved_accuracy": 0.0,
+    "dataset": "MNIST"
+  },
+  "architecture": {
+    "layer_boards": 2,
+    "current_measuring_resistance": 4020,
+    "inline_wiper_resistance": 75
+  },
+  "layers": [
+    {
+      "activation_function": "relu",
+      "num_inputs": 12,
+      "num_outputs": 12,
+      "neurons": [
+        {
+          "feedback": {
+            "id": "l0n0f",
+            "total_resistance": 10565.588235294119,
+            "pot_config": {
+              "programmed_resistance": 6470.588235294119,
+              "pot_code": 222,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n0b",
+            "desired_weight": 1.701631509768512,
+            "actual_weight": 1.7055099010755657,
+            "total_resistance": 17036.176470588238,
+            "pot_config": {
+              "programmed_resistance": 12941.176470588238,
+              "pot_code": 189,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n0w0",
+              "desired_weight": -2.276972690847144,
+              "actual_weight": -2.256044715191861,
+              "total_resistance": 4683.235294117647,
+              "pot_config": {
+                "programmed_resistance": 588.2352941176468,
+                "pot_code": 3,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w1",
+              "desired_weight": 2.081712276777444,
+              "actual_weight": 2.0817284475265123,
+              "total_resistance": 5075.392156862745,
+              "pot_config": {
+                "programmed_resistance": 980.3921568627447,
+                "pot_code": 250,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w2",
+              "desired_weight": 1.8532978448614443,
+              "actual_weight": 1.8655161072547561,
+              "total_resistance": 5663.6274509803925,
+              "pot_config": {
+                "programmed_resistance": 1568.6274509803925,
+                "pot_code": 247,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w3",
+              "desired_weight": 0.03256577742663067,
+              "actual_weight": 0.19531543091402384,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w4",
+              "desired_weight": 0.40805278594638067,
+              "actual_weight": 0.4085734108253813,
+              "total_resistance": 25859.705882352944,
+              "pot_config": {
+                "programmed_resistance": 21764.705882352944,
+                "pot_code": 144,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w5",
+              "desired_weight": -0.9722935728549328,
+              "actual_weight": -0.964211901332212,
+              "total_resistance": 10957.745098039217,
+              "pot_config": {
+                "programmed_resistance": 6862.745098039217,
+                "pot_code": 35,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w6",
+              "desired_weight": -1.9363760052880103,
+              "actual_weight": -1.932417651383385,
+              "total_resistance": 5467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 1372.5490196078435,
+                "pot_code": 7,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w7",
+              "desired_weight": 2.1555145170916155,
+              "actual_weight": 2.1653840744238386,
+              "total_resistance": 4879.313725490196,
+              "pot_config": {
+                "programmed_resistance": 784.3137254901958,
+                "pot_code": 251,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w8",
+              "desired_weight": 0.7920475727475993,
+              "actual_weight": 0.7937673548453624,
+              "total_resistance": 13310.686274509804,
+              "pot_config": {
+                "programmed_resistance": 9215.686274509804,
+                "pot_code": 208,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w9",
+              "desired_weight": -1.746603066491705,
+              "actual_weight": -1.744710129676699,
+              "total_resistance": 6055.78431372549,
+              "pot_config": {
+                "programmed_resistance": 1960.7843137254904,
+                "pot_code": 10,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w10",
+              "desired_weight": -1.2657908085353295,
+              "actual_weight": -1.2565029322948853,
+              "total_resistance": 8408.725490196079,
+              "pot_config": {
+                "programmed_resistance": 4313.725490196079,
+                "pot_code": 22,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n0w11",
+              "desired_weight": 1.316324786105071,
+              "actual_weight": 1.317968912424024,
+              "total_resistance": 8016.568627450981,
+              "pot_config": {
+                "programmed_resistance": 3921.568627450981,
+                "pot_code": 235,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n1f",
+            "total_resistance": 11938.137254901962,
+            "pot_config": {
+              "programmed_resistance": 7843.137254901962,
+              "pot_code": 215,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n1b",
+            "desired_weight": -0.5058170042583432,
+            "actual_weight": -0.6068930113870116,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 255,
+              "tcon_a": 0,
+              "tcon_b": 1,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n1w0",
+              "desired_weight": -0.06950438910570675,
+              "actual_weight": -0.22068836777709513,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w1",
+              "desired_weight": -2.8878232353417643,
+              "actual_weight": -2.915296032943092,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 0,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w2",
+              "desired_weight": -0.3404520956793003,
+              "actual_weight": -0.34035648700697935,
+              "total_resistance": 35075.39215686275,
+              "pot_config": {
+                "programmed_resistance": 30980.39215686275,
+                "pot_code": 158,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w3",
+              "desired_weight": 0.45316986774551565,
+              "actual_weight": 0.45475391102031976,
+              "total_resistance": 26251.862745098042,
+              "pot_config": {
+                "programmed_resistance": 22156.862745098042,
+                "pot_code": 142,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w4",
+              "desired_weight": -0.4935559182070187,
+              "actual_weight": -0.49546118509657444,
+              "total_resistance": 24095.0,
+              "pot_config": {
+                "programmed_resistance": 20000.0,
+                "pot_code": 102,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w5",
+              "desired_weight": -2.771776630764421,
+              "actual_weight": -2.782083209577555,
+              "total_resistance": 4291.078431372549,
+              "pot_config": {
+                "programmed_resistance": 196.07843137254895,
+                "pot_code": 1,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w6",
+              "desired_weight": 0.5499298789010272,
+              "actual_weight": 0.5490803493725454,
+              "total_resistance": 21742.058823529413,
+              "pot_config": {
+                "programmed_resistance": 17647.058823529413,
+                "pot_code": 165,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w7",
+              "desired_weight": -1.3277965557698959,
+              "actual_weight": -1.3269077793154551,
+              "total_resistance": 8996.960784313726,
+              "pot_config": {
+                "programmed_resistance": 4901.9607843137255,
+                "pot_code": 25,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w8",
+              "desired_weight": -2.434322670973207,
+              "actual_weight": -2.4466836785951096,
+              "total_resistance": 4879.313725490196,
+              "pot_config": {
+                "programmed_resistance": 784.3137254901958,
+                "pot_code": 4,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w9",
+              "desired_weight": 0.09138940906999658,
+              "actual_weight": 0.22068836777709513,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w10",
+              "desired_weight": -0.7423270365426756,
+              "actual_weight": -0.74354120743242,
+              "total_resistance": 16055.784313725491,
+              "pot_config": {
+                "programmed_resistance": 11960.784313725491,
+                "pot_code": 61,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n1w11",
+              "desired_weight": -0.7629925396523629,
+              "actual_weight": -0.7621566136109007,
+              "total_resistance": 15663.627450980393,
+              "pot_config": {
+                "programmed_resistance": 11568.627450980393,
+                "pot_code": 59,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n2f",
+            "total_resistance": 11742.058823529413,
+            "pot_config": {
+              "programmed_resistance": 7647.058823529413,
+              "pot_code": 216,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n2b",
+            "desired_weight": 2.0939548726225405,
+            "actual_weight": 2.087639206688259,
+            "total_resistance": 15467.549019607844,
+            "pot_config": {
+              "programmed_resistance": 11372.549019607844,
+              "pot_code": 197,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n2w0",
+              "desired_weight": 0.5778081864588457,
+              "actual_weight": 0.5764526950603795,
+              "total_resistance": 20369.50980392157,
+              "pot_config": {
+                "programmed_resistance": 16274.50980392157,
+                "pot_code": 172,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w1",
+              "desired_weight": 1.5330104458048879,
+              "actual_weight": 1.5400609497357558,
+              "total_resistance": 7624.411764705883,
+              "pot_config": {
+                "programmed_resistance": 3529.411764705883,
+                "pot_code": 237,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w2",
+              "desired_weight": 2.748666326191298,
+              "actual_weight": 2.7363887683063357,
+              "total_resistance": 4291.078431372549,
+              "pot_config": {
+                "programmed_resistance": 196.07843137254895,
+                "pot_code": 254,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w3",
+              "desired_weight": -1.2453393997403233,
+              "actual_weight": -1.2506030135012371,
+              "total_resistance": 9389.117647058825,
+              "pot_config": {
+                "programmed_resistance": 5294.117647058825,
+                "pot_code": 27,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w4",
+              "desired_weight": -0.7521881818723644,
+              "actual_weight": -0.7496385406430534,
+              "total_resistance": 15663.627450980393,
+              "pot_config": {
+                "programmed_resistance": 11568.627450980393,
+                "pot_code": 59,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w5",
+              "desired_weight": 0.9678821885008145,
+              "actual_weight": 0.9676817296738278,
+              "total_resistance": 12134.21568627451,
+              "pot_config": {
+                "programmed_resistance": 8039.2156862745105,
+                "pot_code": 214,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w6",
+              "desired_weight": -1.032201188031665,
+              "actual_weight": -1.0345515638901606,
+              "total_resistance": 11349.901960784315,
+              "pot_config": {
+                "programmed_resistance": 7254.901960784315,
+                "pot_code": 37,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w7",
+              "desired_weight": -0.6979115723631765,
+              "actual_weight": -0.6972678422765459,
+              "total_resistance": 16840.098039215685,
+              "pot_config": {
+                "programmed_resistance": 12745.098039215685,
+                "pot_code": 65,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w8",
+              "desired_weight": 0.7305070284264764,
+              "actual_weight": 0.731328883976821,
+              "total_resistance": 16055.784313725491,
+              "pot_config": {
+                "programmed_resistance": 11960.784313725491,
+                "pot_code": 194,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w9",
+              "desired_weight": 1.7129500773125734,
+              "actual_weight": 1.7166506614685604,
+              "total_resistance": 6840.098039215687,
+              "pot_config": {
+                "programmed_resistance": 2745.098039215687,
+                "pot_code": 241,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w10",
+              "desired_weight": -0.054492167398547814,
+              "actual_weight": -0.21706366251094208,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n2w11",
+              "desired_weight": 0.1731849115719943,
+              "actual_weight": 0.21706366251094208,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n3f",
+            "total_resistance": 10565.588235294119,
+            "pot_config": {
+              "programmed_resistance": 6470.588235294119,
+              "pot_code": 222,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n3b",
+            "desired_weight": -1.0854359300755843,
+            "actual_weight": -1.0825358239976037,
+            "total_resistance": 26840.09803921569,
+            "pot_config": {
+              "programmed_resistance": 22745.09803921569,
+              "pot_code": 116,
+              "tcon_a": 0,
+              "tcon_b": 1,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n3w0",
+              "desired_weight": -1.7155085959836067,
+              "actual_weight": -1.6899904342235257,
+              "total_resistance": 6251.862745098039,
+              "pot_config": {
+                "programmed_resistance": 2156.8627450980393,
+                "pot_code": 11,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w1",
+              "desired_weight": -1.930776897895303,
+              "actual_weight": -1.932417651383385,
+              "total_resistance": 5467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 1372.5490196078435,
+                "pot_code": 7,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w2",
+              "desired_weight": 2.588210100628886,
+              "actual_weight": 2.580119227178051,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 255,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w3",
+              "desired_weight": -1.7979489322406015,
+              "actual_weight": -1.8030919038297446,
+              "total_resistance": 5859.705882352941,
+              "pot_config": {
+                "programmed_resistance": 1764.7058823529414,
+                "pot_code": 9,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w4",
+              "desired_weight": -0.19074133245089103,
+              "actual_weight": -0.19531543091402384,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w5",
+              "desired_weight": 0.14594476325907063,
+              "actual_weight": 0.19531543091402384,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w6",
+              "desired_weight": -0.0755693074755449,
+              "actual_weight": -0.19531543091402384,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w7",
+              "desired_weight": -0.00866451839753105,
+              "actual_weight": -0.19531543091402384,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w8",
+              "desired_weight": 0.7527344033833993,
+              "actual_weight": 0.7495983139619807,
+              "total_resistance": 14095.0,
+              "pot_config": {
+                "programmed_resistance": 10000.0,
+                "pot_code": 204,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w9",
+              "desired_weight": 0.8798253005340136,
+              "actual_weight": 0.8850282091501122,
+              "total_resistance": 11938.137254901962,
+              "pot_config": {
+                "programmed_resistance": 7843.137254901962,
+                "pot_code": 215,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w10",
+              "desired_weight": -1.1102213081833454,
+              "actual_weight": -1.1022819093986846,
+              "total_resistance": 9585.196078431374,
+              "pot_config": {
+                "programmed_resistance": 5490.196078431374,
+                "pot_code": 28,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n3w11",
+              "desired_weight": -2.0232184116970475,
+              "actual_weight": -2.004296155777493,
+              "total_resistance": 5271.470588235294,
+              "pot_config": {
+                "programmed_resistance": 1176.4705882352937,
+                "pot_code": 6,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n4f",
+            "total_resistance": 8996.960784313726,
+            "pot_config": {
+              "programmed_resistance": 4901.9607843137255,
+              "pot_code": 230,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n4b",
+            "desired_weight": 1.0455164419593612,
+            "actual_weight": 1.0438259247463488,
+            "total_resistance": 23702.843137254902,
+            "pot_config": {
+              "programmed_resistance": 19607.843137254902,
+              "pot_code": 155,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n4w0",
+              "desired_weight": 0.034936780497294664,
+              "actual_weight": 0.16631778878479944,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w1",
+              "desired_weight": 1.1395470855045098,
+              "actual_weight": 1.1504343792701426,
+              "total_resistance": 7820.490196078432,
+              "pot_config": {
+                "programmed_resistance": 3725.490196078432,
+                "pot_code": 236,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w2",
+              "desired_weight": -0.6337193002524085,
+              "actual_weight": -0.6295508647243241,
+              "total_resistance": 14291.078431372549,
+              "pot_config": {
+                "programmed_resistance": 10196.078431372549,
+                "pot_code": 52,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w3",
+              "desired_weight": -4.950053970969188e-05,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w4",
+              "desired_weight": 0.917261571487646,
+              "actual_weight": 0.9198147721236054,
+              "total_resistance": 9781.274509803923,
+              "pot_config": {
+                "programmed_resistance": 5686.274509803923,
+                "pot_code": 226,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w5",
+              "desired_weight": -0.3993755285234984,
+              "actual_weight": -0.3993967854671431,
+              "total_resistance": 22526.37254901961,
+              "pot_config": {
+                "programmed_resistance": 18431.37254901961,
+                "pot_code": 94,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w6",
+              "desired_weight": -1.6489414943824028,
+              "actual_weight": -1.6455199124961895,
+              "total_resistance": 5467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 1372.5490196078435,
+                "pot_code": 7,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w7",
+              "desired_weight": -0.5202149884991014,
+              "actual_weight": -0.5221000290153555,
+              "total_resistance": 17232.254901960783,
+              "pot_config": {
+                "programmed_resistance": 13137.254901960783,
+                "pot_code": 67,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w8",
+              "desired_weight": -1.1294407987532697,
+              "actual_weight": -1.1222957355477015,
+              "total_resistance": 8016.568627450981,
+              "pot_config": {
+                "programmed_resistance": 3921.568627450981,
+                "pot_code": 20,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w9",
+              "desired_weight": -1.8405312687167423,
+              "actual_weight": -1.843898812513814,
+              "total_resistance": 4879.313725490196,
+              "pot_config": {
+                "programmed_resistance": 784.3137254901958,
+                "pot_code": 4,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w10",
+              "desired_weight": 2.2014198661283166,
+              "actual_weight": 2.1970600205894324,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 255,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n4w11",
+              "desired_weight": -1.4359841920328358,
+              "actual_weight": -1.4390848217786072,
+              "total_resistance": 6251.862745098039,
+              "pot_config": {
+                "programmed_resistance": 2156.8627450980393,
+                "pot_code": 11,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n5f",
+            "total_resistance": 15663.627450980393,
+            "pot_config": {
+              "programmed_resistance": 11568.627450980393,
+              "pot_code": 196,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n5b",
+            "desired_weight": 1.3267526042621052,
+            "actual_weight": 1.3243092332315558,
+            "total_resistance": 32526.37254901961,
+            "pot_config": {
+              "programmed_resistance": 28431.37254901961,
+              "pot_code": 110,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n5w0",
+              "desired_weight": -0.3399569031180974,
+              "actual_weight": -0.340101198674242,
+              "total_resistance": 46055.7843137255,
+              "pot_config": {
+                "programmed_resistance": 41960.7843137255,
+                "pot_code": 214,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w1",
+              "desired_weight": -1.6905210501549996,
+              "actual_weight": -1.7038573515767472,
+              "total_resistance": 9193.039215686274,
+              "pot_config": {
+                "programmed_resistance": 5098.0392156862745,
+                "pot_code": 26,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w2",
+              "desired_weight": -0.20430232957802155,
+              "actual_weight": -0.289557767834003,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w3",
+              "desired_weight": 2.7671454891633753,
+              "actual_weight": 2.7656528587997022,
+              "total_resistance": 5663.6274509803925,
+              "pot_config": {
+                "programmed_resistance": 1568.6274509803925,
+                "pot_code": 247,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w4",
+              "desired_weight": -1.6335489021745768,
+              "actual_weight": -1.6341478382718446,
+              "total_resistance": 9585.196078431374,
+              "pot_config": {
+                "programmed_resistance": 5490.196078431374,
+                "pot_code": 28,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w5",
+              "desired_weight": -1.7334358882091963,
+              "actual_weight": -1.7409909664483652,
+              "total_resistance": 8996.960784313726,
+              "pot_config": {
+                "programmed_resistance": 4901.9607843137255,
+                "pot_code": 25,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w6",
+              "desired_weight": -3.662131915899048,
+              "actual_weight": -3.650277593730723,
+              "total_resistance": 4291.078431372549,
+              "pot_config": {
+                "programmed_resistance": 196.07843137254895,
+                "pot_code": 1,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w7",
+              "desired_weight": 0.8747689594056799,
+              "actual_weight": 0.8789672606440042,
+              "total_resistance": 17820.490196078434,
+              "pot_config": {
+                "programmed_resistance": 13725.490196078434,
+                "pot_code": 185,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w8",
+              "desired_weight": -0.43057467684527534,
+              "actual_weight": -0.42975342215192774,
+              "total_resistance": 36447.94117647059,
+              "pot_config": {
+                "programmed_resistance": 32352.941176470587,
+                "pot_code": 165,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w9",
+              "desired_weight": -0.4581392695961353,
+              "actual_weight": -0.4594112758756531,
+              "total_resistance": 34095.0,
+              "pot_config": {
+                "programmed_resistance": 30000.0,
+                "pot_code": 153,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w10",
+              "desired_weight": -1.85561954550783,
+              "actual_weight": -1.8627825904464317,
+              "total_resistance": 8408.725490196079,
+              "pot_config": {
+                "programmed_resistance": 4313.725490196079,
+                "pot_code": 22,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n5w11",
+              "desired_weight": -0.7090705131545542,
+              "actual_weight": -0.7076657999991142,
+              "total_resistance": 22134.21568627451,
+              "pot_config": {
+                "programmed_resistance": 18039.21568627451,
+                "pot_code": 92,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n6f",
+            "total_resistance": 14879.313725490198,
+            "pot_config": {
+              "programmed_resistance": 10784.313725490198,
+              "pot_code": 200,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n6b",
+            "desired_weight": 0.6013747841178023,
+            "actual_weight": 0.7564121036158248,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 0,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n6w0",
+              "desired_weight": -1.3634667761099226,
+              "actual_weight": -1.3578809866778803,
+              "total_resistance": 10957.745098039217,
+              "pot_config": {
+                "programmed_resistance": 6862.745098039217,
+                "pot_code": 35,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w1",
+              "desired_weight": -2.8381292302330285,
+              "actual_weight": -2.822611541966561,
+              "total_resistance": 5271.470588235294,
+              "pot_config": {
+                "programmed_resistance": 1176.4705882352937,
+                "pot_code": 6,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w2",
+              "desired_weight": -0.9781807351522923,
+              "actual_weight": -0.9743209496112833,
+              "total_resistance": 15271.470588235296,
+              "pot_config": {
+                "programmed_resistance": 11176.470588235296,
+                "pot_code": 57,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w3",
+              "desired_weight": 2.3611261107646095,
+              "actual_weight": 2.3799808684470514,
+              "total_resistance": 6251.862745098039,
+              "pot_config": {
+                "programmed_resistance": 2156.8627450980393,
+                "pot_code": 244,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w4",
+              "desired_weight": -0.45334472388667735,
+              "actual_weight": -0.45200420527207696,
+              "total_resistance": 32918.529411764706,
+              "pot_config": {
+                "programmed_resistance": 28823.529411764706,
+                "pot_code": 147,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w5",
+              "desired_weight": 0.9462443208973437,
+              "actual_weight": 0.9499277081286107,
+              "total_resistance": 15663.627450980393,
+              "pot_config": {
+                "programmed_resistance": 11568.627450980393,
+                "pot_code": 196,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w6",
+              "desired_weight": -1.0817458191161313,
+              "actual_weight": -1.0858559480285328,
+              "total_resistance": 13702.843137254902,
+              "pot_config": {
+                "programmed_resistance": 9607.843137254902,
+                "pot_code": 49,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w7",
+              "desired_weight": -3.6214084957439767,
+              "actual_weight": -3.6335320452967514,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 0,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w8",
+              "desired_weight": 0.514078805200596,
+              "actual_weight": 0.5131335603122708,
+              "total_resistance": 28996.960784313727,
+              "pot_config": {
+                "programmed_resistance": 24901.960784313727,
+                "pot_code": 128,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w9",
+              "desired_weight": -0.9508110160629016,
+              "actual_weight": -0.9499277081286107,
+              "total_resistance": 15663.627450980393,
+              "pot_config": {
+                "programmed_resistance": 11568.627450980393,
+                "pot_code": 59,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w10",
+              "desired_weight": 0.8216053361366017,
+              "actual_weight": 0.8258683455860348,
+              "total_resistance": 18016.56862745098,
+              "pot_config": {
+                "programmed_resistance": 13921.568627450979,
+                "pot_code": 184,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n6w11",
+              "desired_weight": -0.05145844304699822,
+              "actual_weight": -0.27505894676939086,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n7f",
+            "total_resistance": 15467.549019607844,
+            "pot_config": {
+              "programmed_resistance": 11372.549019607844,
+              "pot_code": 197,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n7b",
+            "desired_weight": -1.2705253739275457,
+            "actual_weight": -1.2694678276847813,
+            "total_resistance": 33506.76470588236,
+            "pot_config": {
+              "programmed_resistance": 29411.764705882357,
+              "pot_code": 150,
+              "tcon_a": 0,
+              "tcon_b": 1,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n7w0",
+              "desired_weight": 0.039906522648001125,
+              "actual_weight": 0.28593306256784995,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w1",
+              "desired_weight": -2.181496849987865,
+              "actual_weight": -2.1982889548412268,
+              "total_resistance": 7036.176470588236,
+              "pot_config": {
+                "programmed_resistance": 2941.176470588236,
+                "pot_code": 15,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w2",
+              "desired_weight": -3.607214900664095,
+              "actual_weight": -3.6045831524595036,
+              "total_resistance": 4291.078431372549,
+              "pot_config": {
+                "programmed_resistance": 196.07843137254895,
+                "pot_code": 1,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w3",
+              "desired_weight": -0.6622805891467027,
+              "actual_weight": -0.6635389811119196,
+              "total_resistance": 23310.686274509804,
+              "pot_config": {
+                "programmed_resistance": 19215.686274509804,
+                "pot_code": 98,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w4",
+              "desired_weight": 0.7700657065281076,
+              "actual_weight": 0.7667287103499555,
+              "total_resistance": 20173.43137254902,
+              "pot_config": {
+                "programmed_resistance": 16078.431372549021,
+                "pot_code": 173,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w5",
+              "desired_weight": -1.0973655375658642,
+              "actual_weight": -1.0973784334592298,
+              "total_resistance": 14095.0,
+              "pot_config": {
+                "programmed_resistance": 10000.0,
+                "pot_code": 51,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w6",
+              "desired_weight": 1.2725565338899312,
+              "actual_weight": 1.2747052977724633,
+              "total_resistance": 12134.21568627451,
+              "pot_config": {
+                "programmed_resistance": 8039.2156862745105,
+                "pot_code": 214,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w7",
+              "desired_weight": 2.0899192990267226,
+              "actual_weight": 2.0822367986907575,
+              "total_resistance": 7428.333333333334,
+              "pot_config": {
+                "programmed_resistance": 3333.333333333334,
+                "pot_code": 238,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w8",
+              "desired_weight": 0.6955929140714268,
+              "actual_weight": 0.6926710834222393,
+              "total_resistance": 22330.29411764706,
+              "pot_config": {
+                "programmed_resistance": 18235.29411764706,
+                "pot_code": 162,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w9",
+              "desired_weight": -0.7428971765642787,
+              "actual_weight": -0.7450051707284825,
+              "total_resistance": 20761.666666666668,
+              "pot_config": {
+                "programmed_resistance": 16666.666666666668,
+                "pot_code": 85,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w10",
+              "desired_weight": -1.9324846795438686,
+              "actual_weight": -1.9294475901625312,
+              "total_resistance": 8016.568627450981,
+              "pot_config": {
+                "programmed_resistance": 3921.568627450981,
+                "pot_code": 20,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n7w11",
+              "desired_weight": 0.5384800573381633,
+              "actual_weight": 0.5370512205168007,
+              "total_resistance": 28800.88235294118,
+              "pot_config": {
+                "programmed_resistance": 24705.88235294118,
+                "pot_code": 129,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n8f",
+            "total_resistance": 11153.823529411766,
+            "pot_config": {
+              "programmed_resistance": 7058.823529411766,
+              "pot_code": 219,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n8b",
+            "desired_weight": 0.3889498911852871,
+            "actual_weight": 0.5670212534593282,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 0,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n8w0",
+              "desired_weight": -1.5539793975426597,
+              "actual_weight": -1.5422331873822337,
+              "total_resistance": 7232.254901960785,
+              "pot_config": {
+                "programmed_resistance": 3137.254901960785,
+                "pot_code": 16,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w1",
+              "desired_weight": -2.719191559832774,
+              "actual_weight": -2.7237664296487827,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 0,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w2",
+              "desired_weight": -0.3872389911602988,
+              "actual_weight": -0.3872736742134126,
+              "total_resistance": 28800.88235294118,
+              "pot_config": {
+                "programmed_resistance": 24705.88235294118,
+                "pot_code": 126,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w3",
+              "desired_weight": 1.407346834073795,
+              "actual_weight": 1.3913463537526447,
+              "total_resistance": 8016.568627450981,
+              "pot_config": {
+                "programmed_resistance": 3921.568627450981,
+                "pot_code": 235,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w4",
+              "desired_weight": 2.0907635374555085,
+              "actual_weight": 2.115884617530548,
+              "total_resistance": 5271.470588235294,
+              "pot_config": {
+                "programmed_resistance": 1176.4705882352937,
+                "pot_code": 249,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w5",
+              "desired_weight": 2.391512656949963,
+              "actual_weight": 2.3816491867110474,
+              "total_resistance": 4683.235294117647,
+              "pot_config": {
+                "programmed_resistance": 588.2352941176468,
+                "pot_code": 252,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w6",
+              "desired_weight": -1.627080742579616,
+              "actual_weight": -1.6306525820923332,
+              "total_resistance": 6840.098039215687,
+              "pot_config": {
+                "programmed_resistance": 2745.098039215687,
+                "pot_code": 14,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w7",
+              "desired_weight": 0.1620944020230037,
+              "actual_weight": 0.20618954671248296,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w8",
+              "desired_weight": 0.017532126470608814,
+              "actual_weight": 0.20618954671248296,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w9",
+              "desired_weight": 0.6405148506390832,
+              "actual_weight": 0.639982224122316,
+              "total_resistance": 17428.333333333336,
+              "pot_config": {
+                "programmed_resistance": 13333.333333333336,
+                "pot_code": 187,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w10",
+              "desired_weight": 0.7960703761443428,
+              "actual_weight": 0.7913319283016507,
+              "total_resistance": 14095.0,
+              "pot_config": {
+                "programmed_resistance": 10000.0,
+                "pot_code": 204,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n8w11",
+              "desired_weight": 0.9546920265935307,
+              "actual_weight": 0.9499035643613957,
+              "total_resistance": 11742.058823529413,
+              "pot_config": {
+                "programmed_resistance": 7647.058823529413,
+                "pot_code": 216,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n9f",
+            "total_resistance": 17428.333333333336,
+            "pot_config": {
+              "programmed_resistance": 13333.333333333336,
+              "pot_code": 187,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n9b",
+            "desired_weight": 2.376270976871054,
+            "actual_weight": 2.375793972853054,
+            "total_resistance": 20173.43137254902,
+            "pot_config": {
+              "programmed_resistance": 16078.431372549021,
+              "pot_code": 173,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n9w0",
+              "desired_weight": 3.723107884186483,
+              "actual_weight": 3.7214302162490327,
+              "total_resistance": 4683.235294117647,
+              "pot_config": {
+                "programmed_resistance": 588.2352941176468,
+                "pot_code": 252,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w1",
+              "desired_weight": -0.6988026836168018,
+              "actual_weight": -0.7005150353274041,
+              "total_resistance": 24879.313725490196,
+              "pot_config": {
+                "programmed_resistance": 20784.313725490196,
+                "pot_code": 106,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w2",
+              "desired_weight": 0.0011693584187848207,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w3",
+              "desired_weight": -3.0625790888915843,
+              "actual_weight": -3.0772386574114146,
+              "total_resistance": 5663.6274509803925,
+              "pot_config": {
+                "programmed_resistance": 1568.6274509803925,
+                "pot_code": 8,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w4",
+              "desired_weight": 0.000696438970440724,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w5",
+              "desired_weight": 0.8172413372755599,
+              "actual_weight": 0.8163191271484923,
+              "total_resistance": 21349.901960784315,
+              "pot_config": {
+                "programmed_resistance": 17254.901960784315,
+                "pot_code": 167,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w6",
+              "desired_weight": 1.0021593375900877,
+              "actual_weight": 1.0,
+              "total_resistance": 17428.333333333336,
+              "pot_config": {
+                "programmed_resistance": 13333.333333333336,
+                "pot_code": 187,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w7",
+              "desired_weight": -1.5014272969593476,
+              "actual_weight": -1.5094719323421275,
+              "total_resistance": 11545.980392156864,
+              "pot_config": {
+                "programmed_resistance": 7450.980392156864,
+                "pot_code": 38,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w8",
+              "desired_weight": -1.0974642060913475,
+              "actual_weight": -1.0989064653920098,
+              "total_resistance": 15859.705882352942,
+              "pot_config": {
+                "programmed_resistance": 11764.705882352942,
+                "pot_code": 60,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w9",
+              "desired_weight": -0.07030535769555847,
+              "actual_weight": -0.32218011522938045,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w10",
+              "desired_weight": -0.30791845746257973,
+              "actual_weight": -0.32218011522938045,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n9w11",
+              "desired_weight": -1.8895082699166835e-05,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n10f",
+            "total_resistance": 10761.666666666668,
+            "pot_config": {
+              "programmed_resistance": 6666.666666666668,
+              "pot_code": 221,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n10b",
+            "desired_weight": 0.22880130816798594,
+            "actual_weight": 0.5470853744954863,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 0,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n10w0",
+              "desired_weight": -1.965851819354169,
+              "actual_weight": -1.9682798687442846,
+              "total_resistance": 5467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 1372.5490196078435,
+                "pot_code": 7,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w1",
+              "desired_weight": 0.2362585853948815,
+              "actual_weight": 0.23668895506167942,
+              "total_resistance": 45467.549019607846,
+              "pot_config": {
+                "programmed_resistance": 41372.549019607846,
+                "pot_code": 44,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w2",
+              "desired_weight": 4.732112771720386e-05,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w3",
+              "desired_weight": -0.6850741724492128,
+              "actual_weight": -0.6870481758038168,
+              "total_resistance": 15663.627450980393,
+              "pot_config": {
+                "programmed_resistance": 11568.627450980393,
+                "pot_code": 59,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w4",
+              "desired_weight": -2.498046793694531,
+              "actual_weight": -2.507916561950239,
+              "total_resistance": 4291.078431372549,
+              "pot_config": {
+                "programmed_resistance": 196.07843137254895,
+                "pot_code": 1,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w5",
+              "desired_weight": 1.7016265681383231,
+              "actual_weight": 1.7213536357791406,
+              "total_resistance": 6251.862745098039,
+              "pot_config": {
+                "programmed_resistance": 2156.8627450980393,
+                "pot_code": 244,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w6",
+              "desired_weight": 0.325708185262966,
+              "actual_weight": 0.3249824584257288,
+              "total_resistance": 33114.60784313726,
+              "pot_config": {
+                "programmed_resistance": 29019.60784313726,
+                "pot_code": 107,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w7",
+              "desired_weight": -0.9944121409817754,
+              "actual_weight": -1.0,
+              "total_resistance": 10761.666666666668,
+              "pot_config": {
+                "programmed_resistance": 6666.666666666668,
+                "pot_code": 34,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w8",
+              "desired_weight": -0.20414598825929622,
+              "actual_weight": -0.20411924078926083,
+              "total_resistance": 52722.45098039216,
+              "pot_config": {
+                "programmed_resistance": 48627.45098039216,
+                "pot_code": 248,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w9",
+              "desired_weight": 0.8193893911113235,
+              "actual_weight": 0.8205862344788405,
+              "total_resistance": 13114.607843137255,
+              "pot_config": {
+                "programmed_resistance": 9019.607843137255,
+                "pot_code": 209,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w10",
+              "desired_weight": -8.289340814202499e-05,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n10w11",
+              "desired_weight": 0.5264433349080955,
+              "actual_weight": 0.5283223194990591,
+              "total_resistance": 20369.50980392157,
+              "pot_config": {
+                "programmed_resistance": 16274.50980392157,
+                "pot_code": 172,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l0n11f",
+            "total_resistance": 13702.843137254902,
+            "pot_config": {
+              "programmed_resistance": 9607.843137254902,
+              "pot_code": 206,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l0n11b",
+            "desired_weight": 1.2792741307523803,
+            "actual_weight": 1.2822031297432355,
+            "total_resistance": 29389.117647058825,
+            "pot_config": {
+              "programmed_resistance": 25294.117647058825,
+              "pot_code": 126,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l0n11w0",
+              "desired_weight": 0.9246908435711801,
+              "actual_weight": 0.9209324697401972,
+              "total_resistance": 14879.313725490198,
+              "pot_config": {
+                "programmed_resistance": 10784.313725490198,
+                "pot_code": 200,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w1",
+              "desired_weight": 1.456642977933913,
+              "actual_weight": 1.4594388580856015,
+              "total_resistance": 9389.117647058825,
+              "pot_config": {
+                "programmed_resistance": 5294.117647058825,
+                "pot_code": 228,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w2",
+              "desired_weight": -1.0971609949511183,
+              "actual_weight": -1.093919495339245,
+              "total_resistance": 12526.372549019608,
+              "pot_config": {
+                "programmed_resistance": 8431.372549019608,
+                "pot_code": 43,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w3",
+              "desired_weight": 3.353488268767714,
+              "actual_weight": 3.3462376403552874,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 255,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w4",
+              "desired_weight": -1.299027138053285,
+              "actual_weight": -1.2969313995675935,
+              "total_resistance": 10565.588235294119,
+              "pot_config": {
+                "programmed_resistance": 6470.588235294119,
+                "pot_code": 33,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w5",
+              "desired_weight": 1.035889429023404,
+              "actual_weight": 1.0294618064506624,
+              "total_resistance": 13310.686274509804,
+              "pot_config": {
+                "programmed_resistance": 9215.686274509804,
+                "pot_code": 208,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w6",
+              "desired_weight": 0.9986532530986473,
+              "actual_weight": 1.0,
+              "total_resistance": 13702.843137254902,
+              "pot_config": {
+                "programmed_resistance": 9607.843137254902,
+                "pot_code": 206,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w7",
+              "desired_weight": -0.504037661309117,
+              "actual_weight": -0.5031843006238996,
+              "total_resistance": 27232.254901960787,
+              "pot_config": {
+                "programmed_resistance": 23137.254901960787,
+                "pot_code": 118,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w8",
+              "desired_weight": -2.918469760585036,
+              "actual_weight": -2.9259352299608534,
+              "total_resistance": 4683.235294117647,
+              "pot_config": {
+                "programmed_resistance": 588.2352941176468,
+                "pot_code": 3,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w9",
+              "desired_weight": -1.1803934511603476,
+              "actual_weight": -1.1868063751921132,
+              "total_resistance": 11545.980392156864,
+              "pot_config": {
+                "programmed_resistance": 7450.980392156864,
+                "pot_code": 38,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w10",
+              "desired_weight": 0.4782710761580366,
+              "actual_weight": 0.47903992542045243,
+              "total_resistance": 28604.80392156863,
+              "pot_config": {
+                "programmed_resistance": 24509.80392156863,
+                "pot_code": 130,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l0n11w11",
+              "desired_weight": 0.07347513698788664,
+              "actual_weight": 0.25331071517247256,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "activation_function": "relu",
+      "num_inputs": 12,
+      "num_outputs": 10,
+      "neurons": [
+        {
+          "feedback": {
+            "id": "l1n0f",
+            "total_resistance": 13898.921568627451,
+            "pot_config": {
+              "programmed_resistance": 9803.921568627451,
+              "pot_code": 205,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n0b",
+            "desired_weight": 2.5280533539502806e-05,
+            "actual_weight": 0.7065724062062203,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 0,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n0w0",
+              "desired_weight": -3.383472612410466,
+              "actual_weight": -3.394120041178865,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 0,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w1",
+              "desired_weight": -0.5516923756620579,
+              "actual_weight": -0.5499846762023362,
+              "total_resistance": 25271.470588235297,
+              "pot_config": {
+                "programmed_resistance": 21176.470588235297,
+                "pot_code": 108,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w2",
+              "desired_weight": 0.7090820789932473,
+              "actual_weight": 0.7096646626854016,
+              "total_resistance": 19585.196078431374,
+              "pot_config": {
+                "programmed_resistance": 15490.196078431374,
+                "pot_code": 176,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w3",
+              "desired_weight": 0.9296416710655168,
+              "actual_weight": 0.9341103914501643,
+              "total_resistance": 14879.313725490198,
+              "pot_config": {
+                "programmed_resistance": 10784.313725490198,
+                "pot_code": 200,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w4",
+              "desired_weight": 3.4717487107563717e-05,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w5",
+              "desired_weight": 2.5472601403850645,
+              "actual_weight": 2.542075346518675,
+              "total_resistance": 5467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 1372.5490196078435,
+                "pot_code": 248,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w6",
+              "desired_weight": -2.271086421442923,
+              "actual_weight": -2.29514805161165,
+              "total_resistance": 6055.78431372549,
+              "pot_config": {
+                "programmed_resistance": 1960.7843137254904,
+                "pot_code": 10,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w7",
+              "desired_weight": -0.3420363713990336,
+              "actual_weight": -0.342628374769497,
+              "total_resistance": 40565.58823529412,
+              "pot_config": {
+                "programmed_resistance": 36470.58823529412,
+                "pot_code": 186,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w8",
+              "desired_weight": 1.7837662240114716,
+              "actual_weight": 1.7772442928957364,
+              "total_resistance": 7820.490196078432,
+              "pot_config": {
+                "programmed_resistance": 3725.490196078432,
+                "pot_code": 236,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w9",
+              "desired_weight": 0.8147255408909407,
+              "actual_weight": 0.815847475671725,
+              "total_resistance": 17036.176470588238,
+              "pot_config": {
+                "programmed_resistance": 12941.176470588238,
+                "pot_code": 189,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w10",
+              "desired_weight": -0.892727445647808,
+              "actual_weight": -0.887337343289374,
+              "total_resistance": 15663.627450980393,
+              "pot_config": {
+                "programmed_resistance": 11568.627450980393,
+                "pot_code": 59,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n0w11",
+              "desired_weight": 0.1432060483509993,
+              "actual_weight": 0.2569354204386256,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l1n1f",
+            "total_resistance": 14879.313725490198,
+            "pot_config": {
+              "programmed_resistance": 10784.313725490198,
+              "pot_code": 200,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n1b",
+            "desired_weight": 2.143489549134764e-05,
+            "actual_weight": 0.7564121036158248,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 0,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n1w0",
+              "desired_weight": 0.2962323667527074,
+              "actual_weight": 0.2965576265854321,
+              "total_resistance": 50173.43137254902,
+              "pot_config": {
+                "programmed_resistance": 46078.43137254902,
+                "pot_code": 20,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w1",
+              "desired_weight": 0.9566120039952547,
+              "actual_weight": 0.9619697152165508,
+              "total_resistance": 15467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 11372.549019607844,
+                "pot_code": 197,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w2",
+              "desired_weight": 0.15622656668558063,
+              "actual_weight": 0.27505894676939086,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w3",
+              "desired_weight": 1.063914625403993,
+              "actual_weight": 1.0705372824806552,
+              "total_resistance": 13898.921568627451,
+              "pot_config": {
+                "programmed_resistance": 9803.921568627451,
+                "pot_code": 205,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w4",
+              "desired_weight": 1.7996722784284793,
+              "actual_weight": 1.8117561389058006,
+              "total_resistance": 8212.64705882353,
+              "pot_config": {
+                "programmed_resistance": 4117.64705882353,
+                "pot_code": 234,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w5",
+              "desired_weight": -2.293458805095157,
+              "actual_weight": -2.3076069272757684,
+              "total_resistance": 6447.941176470588,
+              "pot_config": {
+                "programmed_resistance": 2352.9411764705883,
+                "pot_code": 12,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w6",
+              "desired_weight": 0.6743986425926365,
+              "actual_weight": 0.6722313515141584,
+              "total_resistance": 22134.21568627451,
+              "pot_config": {
+                "programmed_resistance": 18039.21568627451,
+                "pot_code": 163,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w7",
+              "desired_weight": 3.6379844094967404,
+              "actual_weight": 3.6335320452967514,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 255,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w8",
+              "desired_weight": 0.7141714675533036,
+              "actual_weight": 0.7166724119205361,
+              "total_resistance": 20761.666666666668,
+              "pot_config": {
+                "programmed_resistance": 16666.666666666668,
+                "pot_code": 170,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w9",
+              "desired_weight": -1.7607904218369739,
+              "actual_weight": -1.7695087968846555,
+              "total_resistance": 8408.725490196079,
+              "pot_config": {
+                "programmed_resistance": 4313.725490196079,
+                "pot_code": 22,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w10",
+              "desired_weight": 2.1792791494655113,
+              "actual_weight": 2.175307084808439,
+              "total_resistance": 6840.098039215687,
+              "pot_config": {
+                "programmed_resistance": 2745.098039215687,
+                "pot_code": 241,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n1w11",
+              "desired_weight": -0.8005897171850824,
+              "actual_weight": -0.7997565461165944,
+              "total_resistance": 18604.80392156863,
+              "pot_config": {
+                "programmed_resistance": 14509.80392156863,
+                "pot_code": 74,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l1n2f",
+            "total_resistance": 12526.372549019608,
+            "pot_config": {
+              "programmed_resistance": 8431.372549019608,
+              "pot_code": 212,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n2b",
+            "desired_weight": 0.03307622124454894,
+            "actual_weight": 0.6367968298327743,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 0,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n2w0",
+              "desired_weight": -0.81757220545937,
+              "actual_weight": -0.8202466472789836,
+              "total_resistance": 15271.470588235296,
+              "pot_config": {
+                "programmed_resistance": 11176.470588235296,
+                "pot_code": 57,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w1",
+              "desired_weight": 1.8873880879387306,
+              "actual_weight": 1.8853605630893182,
+              "total_resistance": 6644.019607843137,
+              "pot_config": {
+                "programmed_resistance": 2549.0196078431372,
+                "pot_code": 242,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w2",
+              "desired_weight": 0.4297754579438914,
+              "actual_weight": 0.42908764847919023,
+              "total_resistance": 29193.039215686276,
+              "pot_config": {
+                "programmed_resistance": 25098.039215686276,
+                "pot_code": 127,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w3",
+              "desired_weight": -0.5372650023802422,
+              "actual_weight": -0.5373660990288894,
+              "total_resistance": 23310.686274509804,
+              "pot_config": {
+                "programmed_resistance": 19215.686274509804,
+                "pot_code": 98,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w4",
+              "desired_weight": -1.3649220890383604,
+              "actual_weight": -1.362593181115294,
+              "total_resistance": 9193.039215686274,
+              "pot_config": {
+                "programmed_resistance": 5098.0392156862745,
+                "pot_code": 26,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w5",
+              "desired_weight": -0.8776868068805702,
+              "actual_weight": -0.8765169549081081,
+              "total_resistance": 14291.078431372549,
+              "pot_config": {
+                "programmed_resistance": 10196.078431372549,
+                "pot_code": 52,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w6",
+              "desired_weight": 1.833229653714043,
+              "actual_weight": 1.8313147673035302,
+              "total_resistance": 6840.098039215687,
+              "pot_config": {
+                "programmed_resistance": 2745.098039215687,
+                "pot_code": 241,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w7",
+              "desired_weight": 0.4414191077205406,
+              "actual_weight": 0.4409339853469488,
+              "total_resistance": 28408.72549019608,
+              "pot_config": {
+                "programmed_resistance": 24313.72549019608,
+                "pot_code": 131,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w8",
+              "desired_weight": -3.070866027180589,
+              "actual_weight": -3.0589432354138237,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 0,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w9",
+              "desired_weight": 0.4657298121107502,
+              "actual_weight": 0.4667036808404165,
+              "total_resistance": 26840.09803921569,
+              "pot_config": {
+                "programmed_resistance": 22745.09803921569,
+                "pot_code": 139,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w10",
+              "desired_weight": -0.00012494186980238986,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n2w11",
+              "desired_weight": 0.9457265343914891,
+              "actual_weight": 0.941076387098675,
+              "total_resistance": 13310.686274509804,
+              "pot_config": {
+                "programmed_resistance": 9215.686274509804,
+                "pot_code": 208,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l1n3f",
+            "total_resistance": 16251.86274509804,
+            "pot_config": {
+              "programmed_resistance": 12156.86274509804,
+              "pot_code": 193,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n3b",
+            "desired_weight": -0.6723897643497397,
+            "actual_weight": -0.8261876799892709,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 255,
+              "tcon_a": 0,
+              "tcon_b": 1,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n3w0",
+              "desired_weight": -0.715140048235362,
+              "actual_weight": -0.7152337025227705,
+              "total_resistance": 22722.450980392157,
+              "pot_config": {
+                "programmed_resistance": 18627.450980392157,
+                "pot_code": 95,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w1",
+              "desired_weight": -3.9569945043069152,
+              "actual_weight": -3.9687088510617925,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 0,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w2",
+              "desired_weight": -5.225930384816697e-05,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w3",
+              "desired_weight": 0.3311397907491988,
+              "actual_weight": 0.3316912413535053,
+              "total_resistance": 48996.96078431373,
+              "pot_config": {
+                "programmed_resistance": 44901.96078431373,
+                "pot_code": 26,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w4",
+              "desired_weight": -0.5322174830728834,
+              "actual_weight": -0.5317045633145053,
+              "total_resistance": 30565.58823529412,
+              "pot_config": {
+                "programmed_resistance": 26470.58823529412,
+                "pot_code": 135,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w5",
+              "desired_weight": 1.2350729339545559,
+              "actual_weight": 1.239218354028213,
+              "total_resistance": 13114.607843137255,
+              "pot_config": {
+                "programmed_resistance": 9019.607843137255,
+                "pot_code": 209,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w6",
+              "desired_weight": 2.1240817181993124,
+              "actual_weight": 2.131556275636822,
+              "total_resistance": 7624.411764705883,
+              "pot_config": {
+                "programmed_resistance": 3529.411764705883,
+                "pot_code": 237,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w7",
+              "desired_weight": 1.5660350780368033,
+              "actual_weight": 1.567273964961378,
+              "total_resistance": 10369.50980392157,
+              "pot_config": {
+                "programmed_resistance": 6274.50980392157,
+                "pot_code": 223,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w8",
+              "desired_weight": -2.015010006105634,
+              "actual_weight": -2.0272841786006923,
+              "total_resistance": 8016.568627450981,
+              "pot_config": {
+                "programmed_resistance": 3921.568627450981,
+                "pot_code": 20,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w9",
+              "desired_weight": -0.051978270091456114,
+              "actual_weight": -0.30043188363246215,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w10",
+              "desired_weight": -0.12627473531699662,
+              "actual_weight": -0.30043188363246215,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n3w11",
+              "desired_weight": 1.6667249174653695,
+              "actual_weight": 1.6615281299802542,
+              "total_resistance": 9781.274509803923,
+              "pot_config": {
+                "programmed_resistance": 5686.274509803923,
+                "pot_code": 226,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l1n4f",
+            "total_resistance": 23898.92156862745,
+            "pot_config": {
+              "programmed_resistance": 19803.92156862745,
+              "pot_code": 154,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n4b",
+            "desired_weight": 0.921586541483982,
+            "actual_weight": 1.214937319784185,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 0,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n4w0",
+              "desired_weight": -0.00596273911133424,
+              "actual_weight": -0.44179538901243093,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w1",
+              "desired_weight": 1.0555871239684531,
+              "actual_weight": 1.0517756904504054,
+              "total_resistance": 22722.450980392157,
+              "pot_config": {
+                "programmed_resistance": 18627.450980392157,
+                "pot_code": 160,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w2",
+              "desired_weight": 1.6846290051964992,
+              "actual_weight": 1.6955602389944981,
+              "total_resistance": 14095.0,
+              "pot_config": {
+                "programmed_resistance": 10000.0,
+                "pot_code": 204,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w3",
+              "desired_weight": -1.3976153060789946,
+              "actual_weight": -1.402833646968101,
+              "total_resistance": 17036.176470588238,
+              "pot_config": {
+                "programmed_resistance": 12941.176470588238,
+                "pot_code": 66,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w4",
+              "desired_weight": 3.70441092347336,
+              "actual_weight": 3.70644224482659,
+              "total_resistance": 6447.941176470588,
+              "pot_config": {
+                "programmed_resistance": 2352.9411764705883,
+                "pot_code": 243,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w5",
+              "desired_weight": -0.4752725055205534,
+              "actual_weight": -0.4744719903302846,
+              "total_resistance": 50369.50980392157,
+              "pot_config": {
+                "programmed_resistance": 46274.50980392157,
+                "pot_code": 236,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w6",
+              "desired_weight": -0.40015827854860325,
+              "actual_weight": -0.44179538901243093,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w7",
+              "desired_weight": 0.39601285021617166,
+              "actual_weight": 0.44179538901243093,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w8",
+              "desired_weight": 0.24561481221423895,
+              "actual_weight": 0.44179538901243093,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w9",
+              "desired_weight": -1.998055938926471,
+              "actual_weight": -2.0018970345490232,
+              "total_resistance": 11938.137254901962,
+              "pot_config": {
+                "programmed_resistance": 7843.137254901962,
+                "pot_code": 40,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w10",
+              "desired_weight": -1.0269123715470168,
+              "actual_weight": -1.025234576416606,
+              "total_resistance": 23310.686274509804,
+              "pot_config": {
+                "programmed_resistance": 19215.686274509804,
+                "pot_code": 98,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n4w11",
+              "desired_weight": -5.571346352593693,
+              "actual_weight": -5.569444127121936,
+              "total_resistance": 4291.078431372549,
+              "pot_config": {
+                "programmed_resistance": 196.07843137254895,
+                "pot_code": 1,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l1n5f",
+            "total_resistance": 18996.960784313727,
+            "pot_config": {
+              "programmed_resistance": 14901.960784313727,
+              "pot_code": 179,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n5b",
+            "desired_weight": -0.34308130888111255,
+            "actual_weight": -0.9657388327361632,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 255,
+              "tcon_a": 0,
+              "tcon_b": 1,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n5w0",
+              "desired_weight": 0.6530939619247725,
+              "actual_weight": 0.6551362718878585,
+              "total_resistance": 28996.960784313727,
+              "pot_config": {
+                "programmed_resistance": 24901.960784313727,
+                "pot_code": 128,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w1",
+              "desired_weight": -2.075104426103511,
+              "actual_weight": -2.0664505326920413,
+              "total_resistance": 9193.039215686274,
+              "pot_config": {
+                "programmed_resistance": 5098.0392156862745,
+                "pot_code": 26,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w2",
+              "desired_weight": -4.642619779551072,
+              "actual_weight": -4.639062462591875,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 0,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w3",
+              "desired_weight": 3.5578945499623305,
+              "actual_weight": 3.6037307742379445,
+              "total_resistance": 5271.470588235294,
+              "pot_config": {
+                "programmed_resistance": 1176.4705882352937,
+                "pot_code": 249,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w4",
+              "desired_weight": -2.066148231782941,
+              "actual_weight": -2.0664505326920413,
+              "total_resistance": 9193.039215686274,
+              "pot_config": {
+                "programmed_resistance": 5098.0392156862745,
+                "pot_code": 26,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w5",
+              "desired_weight": 2.3045289835234124,
+              "actual_weight": 2.3131349305829128,
+              "total_resistance": 8212.64705882353,
+              "pot_config": {
+                "programmed_resistance": 4117.64705882353,
+                "pot_code": 234,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w6",
+              "desired_weight": -1.6173284103916323,
+              "actual_weight": -1.6178560395427866,
+              "total_resistance": 11742.058823529413,
+              "pot_config": {
+                "programmed_resistance": 7647.058823529413,
+                "pot_code": 39,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w7",
+              "desired_weight": -3.987096212180304,
+              "actual_weight": -4.056375473633529,
+              "total_resistance": 4683.235294117647,
+              "pot_config": {
+                "programmed_resistance": 588.2352941176468,
+                "pot_code": 3,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w8",
+              "desired_weight": 1.1394437414710423,
+              "actual_weight": 1.1413685655213848,
+              "total_resistance": 16644.01960784314,
+              "pot_config": {
+                "programmed_resistance": 12549.01960784314,
+                "pot_code": 191,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w9",
+              "desired_weight": 3.462455896745706,
+              "actual_weight": 3.4744929979020602,
+              "total_resistance": 5467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 1372.5490196078435,
+                "pot_code": 248,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w10",
+              "desired_weight": -0.5285994008204122,
+              "actual_weight": -0.5297578526337662,
+              "total_resistance": 35859.705882352944,
+              "pot_config": {
+                "programmed_resistance": 31764.705882352944,
+                "pot_code": 162,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n5w11",
+              "desired_weight": 0.9064258200882254,
+              "actual_weight": 0.9064410648877995,
+              "total_resistance": 20957.745098039217,
+              "pot_config": {
+                "programmed_resistance": 16862.745098039217,
+                "pot_code": 169,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l1n6f",
+            "total_resistance": 12722.450980392157,
+            "pot_config": {
+              "programmed_resistance": 8627.450980392157,
+              "pot_code": 211,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n6b",
+            "desired_weight": 1.871750311510173e-05,
+            "actual_weight": 0.6467647693146952,
+            "total_resistance": 54095.0,
+            "pot_config": {
+              "programmed_resistance": 50000.0,
+              "pot_code": 0,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n6w0",
+              "desired_weight": -2.0678014988732087,
+              "actual_weight": -2.1008758438699022,
+              "total_resistance": 6055.78431372549,
+              "pot_config": {
+                "programmed_resistance": 1960.7843137254904,
+                "pot_code": 10,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w1",
+              "desired_weight": 3.125863676481913,
+              "actual_weight": 3.106825636237401,
+              "total_resistance": 4095.0,
+              "pot_config": {
+                "programmed_resistance": 0.0,
+                "pot_code": 255,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w2",
+              "desired_weight": -2.597943388503899,
+              "actual_weight": -2.607426309550122,
+              "total_resistance": 4879.313725490196,
+              "pot_config": {
+                "programmed_resistance": 784.3137254901958,
+                "pot_code": 4,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w3",
+              "desired_weight": 2.6472771655886894e-05,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w4",
+              "desired_weight": 2.0126863082878628,
+              "actual_weight": 2.034985651335288,
+              "total_resistance": 6251.862745098039,
+              "pot_config": {
+                "programmed_resistance": 2156.8627450980393,
+                "pot_code": 244,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w5",
+              "desired_weight": -0.6876275729150485,
+              "actual_weight": -0.691109821109981,
+              "total_resistance": 18408.725490196077,
+              "pot_config": {
+                "programmed_resistance": 14313.725490196077,
+                "pot_code": 73,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w6",
+              "desired_weight": -1.0349683452909566,
+              "actual_weight": -1.0318043397021524,
+              "total_resistance": 12330.29411764706,
+              "pot_config": {
+                "programmed_resistance": 8235.29411764706,
+                "pot_code": 42,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w7",
+              "desired_weight": -0.7861688552081956,
+              "actual_weight": -0.7828303241257413,
+              "total_resistance": 16251.86274509804,
+              "pot_config": {
+                "programmed_resistance": 12156.86274509804,
+                "pot_code": 62,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w8",
+              "desired_weight": 1.663386566968388,
+              "actual_weight": 1.668646890149031,
+              "total_resistance": 7624.411764705883,
+              "pot_config": {
+                "programmed_resistance": 3529.411764705883,
+                "pot_code": 237,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w9",
+              "desired_weight": 0.9874545358203044,
+              "actual_weight": 0.9848219232141096,
+              "total_resistance": 12918.529411764706,
+              "pot_config": {
+                "programmed_resistance": 8823.529411764706,
+                "pot_code": 210,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w10",
+              "desired_weight": 7.880108050268122e-05,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n6w11",
+              "desired_weight": -0.7653995260837692,
+              "actual_weight": -0.764385724131025,
+              "total_resistance": 16644.01960784314,
+              "pot_config": {
+                "programmed_resistance": 12549.01960784314,
+                "pot_code": 64,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l1n7f",
+            "total_resistance": 12722.450980392157,
+            "pot_config": {
+              "programmed_resistance": 8627.450980392157,
+              "pot_code": 211,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n7b",
+            "desired_weight": 0.7479466578023889,
+            "actual_weight": 0.7469399437803624,
+            "total_resistance": 46840.09803921569,
+            "pot_config": {
+              "programmed_resistance": 42745.09803921569,
+              "pot_code": 37,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n7w0",
+              "desired_weight": 2.3245898504208493,
+              "actual_weight": 2.3269020423532787,
+              "total_resistance": 5467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 1372.5490196078435,
+                "pot_code": 248,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w1",
+              "desired_weight": -0.32492435202092507,
+              "actual_weight": -0.3246099622532012,
+              "total_resistance": 39193.03921568628,
+              "pot_config": {
+                "programmed_resistance": 35098.03921568628,
+                "pot_code": 179,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w2",
+              "desired_weight": 1.7138423893894446,
+              "actual_weight": 1.712692525967084,
+              "total_resistance": 7428.333333333334,
+              "pot_config": {
+                "programmed_resistance": 3333.333333333334,
+                "pot_code": 238,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w3",
+              "desired_weight": -1.6954510579219937,
+              "actual_weight": -1.712692525967084,
+              "total_resistance": 7428.333333333334,
+              "pot_config": {
+                "programmed_resistance": 3333.333333333334,
+                "pot_code": 17,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w4",
+              "desired_weight": -2.087793930331206,
+              "actual_weight": -2.1008758438699022,
+              "total_resistance": 6055.78431372549,
+              "pot_config": {
+                "programmed_resistance": 1960.7843137254904,
+                "pot_code": 10,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w5",
+              "desired_weight": -2.4105563679241344,
+              "actual_weight": -2.413453848872027,
+              "total_resistance": 5271.470588235294,
+              "pot_config": {
+                "programmed_resistance": 1176.4705882352937,
+                "pot_code": 6,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w6",
+              "desired_weight": 0.8356028292377617,
+              "actual_weight": 0.8330861724733419,
+              "total_resistance": 15271.470588235296,
+              "pot_config": {
+                "programmed_resistance": 11176.470588235296,
+                "pot_code": 198,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w7",
+              "desired_weight": -3.864631456227372e-05,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w8",
+              "desired_weight": -2.101797385171207,
+              "actual_weight": -2.1008758438699022,
+              "total_resistance": 6055.78431372549,
+              "pot_config": {
+                "programmed_resistance": 1960.7843137254904,
+                "pot_code": 10,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w9",
+              "desired_weight": -0.9587578774293358,
+              "actual_weight": -0.9558072903240062,
+              "total_resistance": 13310.686274509804,
+              "pot_config": {
+                "programmed_resistance": 9215.686274509804,
+                "pot_code": 47,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w10",
+              "desired_weight": 2.3159306161958275,
+              "actual_weight": 2.3269020423532787,
+              "total_resistance": 5467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 1372.5490196078435,
+                "pot_code": 248,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n7w11",
+              "desired_weight": 0.6675022611383868,
+              "actual_weight": 0.6697098091025911,
+              "total_resistance": 18996.960784313727,
+              "pot_config": {
+                "programmed_resistance": 14901.960784313727,
+                "pot_code": 179,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l1n8f",
+            "total_resistance": 10369.50980392157,
+            "pot_config": {
+              "programmed_resistance": 6274.50980392157,
+              "pot_code": 223,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n8b",
+            "desired_weight": -1.2888284723551615,
+            "actual_weight": -1.288328999995571,
+            "total_resistance": 22134.21568627451,
+            "pot_config": {
+              "programmed_resistance": 18039.21568627451,
+              "pot_code": 92,
+              "tcon_a": 0,
+              "tcon_b": 1,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n8w0",
+              "desired_weight": 1.7138938416966472,
+              "actual_weight": 1.7123314283864075,
+              "total_resistance": 6055.78431372549,
+              "pot_config": {
+                "programmed_resistance": 1960.7843137254904,
+                "pot_code": 245,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w1",
+              "desired_weight": 0.3096363117660732,
+              "actual_weight": 0.3094751133075264,
+              "total_resistance": 33506.76470588236,
+              "pot_config": {
+                "programmed_resistance": 29411.764705882357,
+                "pot_code": 105,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w2",
+              "desired_weight": -0.5152469724383648,
+              "actual_weight": -0.5140181465624074,
+              "total_resistance": 20173.43137254902,
+              "pot_config": {
+                "programmed_resistance": 16078.431372549021,
+                "pot_code": 82,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w3",
+              "desired_weight": 0.15738726817957072,
+              "actual_weight": 0.1916907256478708,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w4",
+              "desired_weight": -0.9680033492393783,
+              "actual_weight": -0.9635598392988913,
+              "total_resistance": 10761.666666666668,
+              "pot_config": {
+                "programmed_resistance": 6666.666666666668,
+                "pot_code": 34,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w5",
+              "desired_weight": 0.28764109809629973,
+              "actual_weight": 0.28759629006251203,
+              "total_resistance": 36055.7843137255,
+              "pot_config": {
+                "programmed_resistance": 31960.784313725497,
+                "pot_code": 92,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w6",
+              "desired_weight": 0.9008752732402551,
+              "actual_weight": 0.8981056135315746,
+              "total_resistance": 11545.980392156864,
+              "pot_config": {
+                "programmed_resistance": 7450.980392156864,
+                "pot_code": 217,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w7",
+              "desired_weight": -1.4377799210910291,
+              "actual_weight": -1.4337865499057871,
+              "total_resistance": 7232.254901960785,
+              "pot_config": {
+                "programmed_resistance": 3137.254901960785,
+                "pot_code": 16,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w8",
+              "desired_weight": -0.3635481639277346,
+              "actual_weight": -0.36250938242239583,
+              "total_resistance": 28604.80392156863,
+              "pot_config": {
+                "programmed_resistance": 24509.80392156863,
+                "pot_code": 125,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w9",
+              "desired_weight": 0.19365919289012418,
+              "actual_weight": 0.19379810872365416,
+              "total_resistance": 53506.76470588236,
+              "pot_config": {
+                "programmed_resistance": 49411.76470588236,
+                "pot_code": 3,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w10",
+              "desired_weight": -1.898049172384601,
+              "actual_weight": -1.8965554340224857,
+              "total_resistance": 5467.549019607844,
+              "pot_config": {
+                "programmed_resistance": 1372.5490196078435,
+                "pot_code": 7,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n8w11",
+              "desired_weight": 1.2877900033143146,
+              "actual_weight": 1.2935097653144836,
+              "total_resistance": 8016.568627450981,
+              "pot_config": {
+                "programmed_resistance": 3921.568627450981,
+                "pot_code": 235,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            }
+          ]
+        },
+        {
+          "feedback": {
+            "id": "l1n9f",
+            "total_resistance": 11153.823529411766,
+            "pot_config": {
+              "programmed_resistance": 7058.823529411766,
+              "pot_code": 219,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "bias": {
+            "id": "l1n9b",
+            "desired_weight": 0.5975191825250239,
+            "actual_weight": 0.5973334618887335,
+            "total_resistance": 51349.901960784315,
+            "pot_config": {
+              "programmed_resistance": 47254.901960784315,
+              "pot_code": 14,
+              "tcon_a": 1,
+              "tcon_b": 0,
+              "tcon_w": 1
+            }
+          },
+          "weights": [
+            {
+              "id": "l1n9w0",
+              "desired_weight": 1.1904921425549493,
+              "actual_weight": 1.1879522601259278,
+              "total_resistance": 9389.117647058825,
+              "pot_config": {
+                "programmed_resistance": 5294.117647058825,
+                "pot_code": 228,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w1",
+              "desired_weight": -0.7025153344137252,
+              "actual_weight": -0.7032806038239713,
+              "total_resistance": 15859.705882352942,
+              "pot_config": {
+                "programmed_resistance": 11764.705882352942,
+                "pot_code": 60,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w2",
+              "desired_weight": 2.121840547686976,
+              "actual_weight": 2.115884617530548,
+              "total_resistance": 5271.470588235294,
+              "pot_config": {
+                "programmed_resistance": 1176.4705882352937,
+                "pot_code": 249,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w3",
+              "desired_weight": -2.485961200112235,
+              "actual_weight": -2.4857217767484543,
+              "total_resistance": 4487.156862745098,
+              "pot_config": {
+                "programmed_resistance": 392.1568627450979,
+                "pot_code": 2,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w4",
+              "desired_weight": 0.1557208066168232,
+              "actual_weight": 0.20618954671248296,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 0,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w5",
+              "desired_weight": 0.0002443435267289399,
+              "actual_weight": 0.0,
+              "total_resistance": Infinity,
+              "pot_config": {
+                "programmed_resistance": Infinity,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w6",
+              "desired_weight": -1.3679860713739613,
+              "actual_weight": -1.3581277083407943,
+              "total_resistance": 8212.64705882353,
+              "pot_config": {
+                "programmed_resistance": 4117.64705882353,
+                "pot_code": 21,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w7",
+              "desired_weight": 0.2691221522931926,
+              "actual_weight": 0.26974244195282254,
+              "total_resistance": 41349.901960784315,
+              "pot_config": {
+                "programmed_resistance": 37254.901960784315,
+                "pot_code": 65,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w8",
+              "desired_weight": 1.1289134849490146,
+              "actual_weight": 1.117914099578457,
+              "total_resistance": 9977.352941176472,
+              "pot_config": {
+                "programmed_resistance": 5882.352941176472,
+                "pot_code": 225,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w9",
+              "desired_weight": -1.6222461490424462,
+              "actual_weight": -1.6306525820923332,
+              "total_resistance": 6840.098039215687,
+              "pot_config": {
+                "programmed_resistance": 2745.098039215687,
+                "pot_code": 14,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w10",
+              "desired_weight": 0.314087958418362,
+              "actual_weight": 0.314479681785891,
+              "total_resistance": 35467.549019607846,
+              "pot_config": {
+                "programmed_resistance": 31372.549019607846,
+                "pot_code": 95,
+                "tcon_a": 1,
+                "tcon_b": 0,
+                "tcon_w": 1
+              }
+            },
+            {
+              "id": "l1n9w11",
+              "desired_weight": -0.033742732783091756,
+              "actual_weight": -0.20618954671248296,
+              "total_resistance": 54095.0,
+              "pot_config": {
+                "programmed_resistance": 50000.0,
+                "pot_code": 255,
+                "tcon_a": 0,
+                "tcon_b": 1,
+                "tcon_w": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
