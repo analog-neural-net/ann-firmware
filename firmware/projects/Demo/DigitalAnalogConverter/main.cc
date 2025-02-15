@@ -1,85 +1,43 @@
+
+#include <stdio.h>
+
+#include <cstring>
+#include <iostream>
+
 #include "bindings.hpp"
+#include "projects/Demo/DigitalAnalogConverter/bindings.hpp"
 
 int main() {
     bindings::Init();
 
-    // Initialize variables
-    constexpr float kMinVoltage = 0.0F;
-    constexpr float kMaxVoltage = bindings::kVoltageReference;
-    constexpr float kVoltageStep = 0.1F;
+    std::string buf;
+    bool pos = true;
+    float voltage_outputs[4] = {0, 0, 0, 0};
 
-    // Track which analog output we're adjusting
-    uint8_t current_output_index = 0;
+    while (1) {
+        bindings::red_led.Set(pos);
+        pos ^= 1;
 
-    while (true) {
-        /* Update LED position indicators to show current output index
-         *
-         * LED Pattern |  Output Index
-         * ------------+----------------
-         *     0b00    | analog_output0
-         *     0b01    | analog_output1
-         *     0b10    | analog_output2
-         *     0b11    | analog_output3
-         */
-        bindings::led_position0.Set(((current_output_index + 1) & 0b01) != 0);
-        bindings::led_position1.Set(((current_output_index + 1) & 0b10) != 0);
+        bindings::DelayMs(500);
 
-        // Check increment button
-        if (bindings::button_increment.Read()) {
-            float current_voltage =
-                bindings::analog_output_group.GetVoltageSetpoint(
-                    current_output_index);
+        std::cout << "Enter a value for channel 0:" << std::endl;
+        std::cin >> buf;
+        voltage_outputs[0] = std::stof(buf);
 
-            float new_voltage = current_voltage;
+        std::cout << "Enter a value for channel 1:" << std::endl;
+        std::cin >> buf;
+        voltage_outputs[1] = std::stof(buf);
 
-            if ((current_voltage + kVoltageStep) < kMaxVoltage) {
-                new_voltage += kVoltageStep;
-            }
+        std::cout << "Enter a value for channel 2:" << std::endl;
+        std::cin >> buf;
+        voltage_outputs[2] = std::stof(buf);
 
-            bindings::analog_output_group.SetVoltage(current_output_index,
-                                                     new_voltage);
-        }
+        std::cout << "Enter a value for channel 3:" << std::endl;
+        std::cin >> buf;
+        voltage_outputs[3] = std::stof(buf);
 
-        // Check decrement button
-        if (bindings::button_decrement.Read()) {
-            float current_voltage =
-                bindings::analog_output_group.GetVoltageSetpoint(
-                    current_output_index);
-
-            float new_voltage = current_voltage;
-
-            if ((current_voltage - kVoltageStep) > kMinVoltage) {
-                new_voltage -= kVoltageStep;
-            }
-
-            bindings::analog_output_group.SetVoltage(current_output_index,
-                                                     new_voltage);
-        }
-
-        // Check confirm button
-        if (bindings::button_confirm.Read()) {
-            // Move to next output
-            current_output_index =
-                (current_output_index + 1) % bindings::kNumAnalogOutputs;
-
-            // If we've wrapped around, update all outputs simultaneously
-            if (current_output_index == 0) {
-                bindings::analog_output_group.LoadVoltages();
-            }
-        }
-
-        // Update PWM to show new current output's value
-        float current_voltage =
-            bindings::analog_output_group.GetVoltageSetpoint(
-                current_output_index);
-
-        float duty_cycle = current_voltage / kMaxVoltage;
-        float current_duty_cycle = bindings::pwm_output0.GetDutyCycle();
-
-        if (current_duty_cycle != duty_cycle) {
-            bindings::pwm_output0.SetDutyCycle(duty_cycle);
-        }
-
-        bindings::DelayMs(10);  // Longer debounce for confirm
+        bindings::analog_output_group.SetAndLoadAllVoltages(voltage_outputs);
     }
+
+    return 0;
 }

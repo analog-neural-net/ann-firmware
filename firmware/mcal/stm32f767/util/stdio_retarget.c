@@ -19,6 +19,14 @@
 
 static UART_HandleTypeDef *debug_uart;
 
+/**
+ * @brief This file contains the implementation for retargeting the standard I/O functions.
+ *
+ * @details The following argument should be added to the platform CMakeLists to allow
+ * floating point printing and scanning in platforms that disable it by default,
+ * such as the STM32:
+ * target_link_options(main PRIVATE -u _printf_float)
+ */
 void SetDebugUART(UART_HandleTypeDef *huart) {
   debug_uart = huart;
 
@@ -26,6 +34,7 @@ void SetDebugUART(UART_HandleTypeDef *huart) {
    * chars are sent out as soon as they are printed. */
   setvbuf(stdout, NULL, _IONBF, 0);
   setvbuf(stderr, NULL, _IONBF, 0);
+  
 }
 
 // Inspired by: https://github.com/cnoviello/mastering-stm32/blob/024664974feefb74dfa4f234e7a9a8b1d4b0681d/nucleo-f030R8/system/src/retarget/retarget.c#L35-L47

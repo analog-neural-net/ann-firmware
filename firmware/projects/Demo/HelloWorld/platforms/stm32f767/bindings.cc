@@ -11,10 +11,6 @@
 #include "shared/periph/gpio.hpp"
 
 extern "C" {
-/**
- * This requires extern since it is not declared in a header, only defined
- * in cubemx/../main.c
- */
 void SystemClock_Config();
 }
 namespace mcal {
@@ -29,7 +25,7 @@ namespace bindings {
 
 shared::periph::DigitalOutput& indicator = mcal::indicator;
 
-void DelayMS(unsigned int ms) {
+void DelayMs(unsigned int ms) {
     HAL_Delay(ms);
 }
 
