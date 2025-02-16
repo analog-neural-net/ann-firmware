@@ -1,7 +1,7 @@
 {
   "metadata": {
     "date_trained": "2024-01-30",
-    "achieved_accuracy": 0.0,
+    "achieved_accuracy": 0.878,
     "dataset": "MNIST"
   },
   "architecture": {

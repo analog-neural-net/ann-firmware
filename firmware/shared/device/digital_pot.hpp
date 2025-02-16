@@ -66,7 +66,7 @@ DigitalPotentiometerController(DigitalPotentiometerController<ResolutionT>&)
 
 template <typename ResolutionT>
     requires(std::unsigned_integral<ResolutionT>)
-class DigitalPotentiometer {
+class DigitalPotentiometer final {
 public:
     DigitalPotentiometer(
         DigitalPotentiometerController<ResolutionT>& controller,
@@ -103,7 +103,8 @@ public:
 
     void SetTerminalConnection(DigitalPotTerminal terminal,
                                bool terminal_connect) {
-        controller_.SetTerminalConnection(pot_index_, terminal, terminal_connect);
+        controller_.SetTerminalConnection(pot_index_, terminal,
+                                          terminal_connect);
     }
 
 private:

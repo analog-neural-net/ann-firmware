@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <_types/_uint8_t.h>
-
 #include <iomanip>
 #include <iostream>
 #include <string>

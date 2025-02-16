@@ -4,8 +4,9 @@
 #include <vector>
 
 #include "neuron.hpp"
+#include "pot_config.hpp"
 
-namespace app {
+namespace anne {
 
 template <size_t num_outputs, size_t num_inputs>
 class Layer {
@@ -45,4 +46,4 @@ private:
     Neuron<num_inputs> neurons_[num_outputs];
 };
 
-}  // namespace app
+}  // namespace anne

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdio>
+
 constexpr size_t kLayerBoard0NumInputs = 12;
 constexpr size_t kLayerBoard0NumOutputs = 12;
 

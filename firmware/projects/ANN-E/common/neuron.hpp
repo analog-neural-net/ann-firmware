@@ -2,8 +2,8 @@
 
 #include <cstdint>
 
+#include "pot_config.hpp"
 #include "shared/device/digital_pot.hpp"
-#include "weight.hpp"
 
 namespace app {
 
