@@ -46,7 +46,9 @@ int _write(int fd, char* ptr, int len) {
 // Inspired by: https://github.com/cnoviello/mastering-stm32/blob/024664974feefb74dfa4f234e7a9a8b1d4b0681d/nucleo-f030R8/system/src/retarget/retarget.c#L66-L78
 int _read(int fd, char* ptr, int len) {
   HAL_StatusTypeDef hstatus;
-
+  
+  (void)len; // Suppress unused parameter warning
+  
   if (fd == STDIN_FILENO) {
     hstatus = HAL_UART_Receive(debug_uart, (uint8_t *) ptr, 1, HAL_MAX_DELAY);
     if (hstatus == HAL_OK)

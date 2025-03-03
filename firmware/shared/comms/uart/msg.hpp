@@ -1,5 +1,3 @@
-#include <sys/_stdint.h>
-
 #include <cstdint>
 #include <cstring>
 #include <iomanip>
@@ -15,9 +13,10 @@ enum class MessageType : uint8_t {
     Receive = 1
 };
 
+template <MessageType msg_type>
 struct Message {
     // Pure virtual template method that derived classes must implement
-    template <size_t N, MessageType msg_type>
+    template <size_t N>
     Message(uint8_t (&data)[N])
         : data_length_(N), data_(data), msg_type_(msg_type) {}
 
@@ -71,7 +70,8 @@ private:
 }  // namespace shared::uart
 
 // Operator overload for stream insertion
+template <shared::uart::MessageType msg_type>
 inline std::ostream& operator<<(std::ostream& os,
-                                const shared::uart::Message& msg) {
+                                const shared::uart::Message<msg_type>& msg) {
     return os << msg.ToString();
 }

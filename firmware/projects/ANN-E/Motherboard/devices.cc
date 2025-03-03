@@ -1,3 +1,4 @@
+#include <sys/_stdint.h>
 #include "bindings.hpp"
 #include "devices.hpp"
 #include "projects/Demo/DigitalAnalogConverter/bindings.hpp"
@@ -249,6 +250,8 @@ shared::device::I2CMultiplexer<ti::TCA9548AChannel>& i2c_mux2 =
 shared::device::I2CMultiplexer<ti::TCA9548AChannel>& i2c_mux3 =
     tca9548a_i2c_mux3;
 
+
+shared::device::DigitalPotentiometer<uint8_t> mcp4461_pot_controller_l0
 
 
 }  // namespace device
