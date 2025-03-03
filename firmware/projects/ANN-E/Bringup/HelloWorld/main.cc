@@ -8,13 +8,13 @@ int main() {
 
     bool light = true;
 
-    std::cout << "Hello World!\n" << std::endl;
     while (1) {
         //TODO: switch to interrupts to keep this backgrounded
         light = !light;
         bindings::red_led.Set(light);
         bindings::heartbeat.Set(light);
         bindings::DelayMs(1000);
+        std::cout << "Hello World!\n" << std::endl;
     }
 
     return 0;

@@ -14,7 +14,12 @@ extern shared::periph::DigitalOutput& red_led;
 extern shared::periph::DigitalOutput& green_led;
 extern shared::periph::DigitalOutput& blue_led;
 
-extern shared::periph::I2CBus& i2c_bus2;
+extern shared::periph::I2CBus& i2c1;
+extern shared::periph::I2CBus& i2c1A;
+
+extern shared::periph::I2CBus& i2c2;
+extern shared::periph::I2CBus& i2c3;
+
 
 extern shared::periph::AnalogOutputGroup<kNumAnalogOutputs>&
     analog_output_group;

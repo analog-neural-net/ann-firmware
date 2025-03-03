@@ -3,22 +3,20 @@
 
 #include <cstring>
 #include <iostream>
-
 #include "bindings.hpp"
-#include "projects/Demo/DigitalAnalogConverter/bindings.hpp"
 
 int main() {
     bindings::Init();
 
     std::string buf;
     bool pos = true;
-    float voltage_outputs[4] = {0, 0, 0, 0};
+    float voltage_outputs[4] = {1, 1, 1, 1};
 
     while (1) {
         bindings::red_led.Set(pos);
         pos ^= 1;
 
-        bindings::DelayMs(500);
+        bindings::DelayMs(5000);
 
         std::cout << "Enter a value for channel 0:" << std::endl;
         std::cin >> buf;
