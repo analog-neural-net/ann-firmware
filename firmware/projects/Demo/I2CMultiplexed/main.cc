@@ -11,17 +11,16 @@ int main() {
     uint8_t data2[] = {0xAA, 0xBB, 0xCC, 0xDD, 0x00};
 
     while (true) {
-        auto button_state = bindings::button1.Read();
 
-        if (button_state) {
-            auto write_msg = shared::i2c::Message(
-                0x2C, data1, shared::i2c::MessageType::Write);
+        // if (button_state) {
+        //     auto write_msg = shared::i2c::Message(
+        //         0x2C, data1, shared::i2c::MessageType::Write);
 
-            std::cout << write_msg << std::endl;
+        //     std::cout << write_msg << std::endl;
 
-            bindings::i2c_bus1A.Write(write_msg);
-            data1[4] += 0x01;
-        } else {
+        //     bindings::i2c_bus1A.Write(write_msg);
+        //     data1[4] += 0x01;
+        // } else {
             auto write_msg = shared::i2c::Message(
                 0x2C, data2, shared::i2c::MessageType::Write);
 
@@ -29,7 +28,7 @@ int main() {
 
             bindings::i2c_bus1B.Write(write_msg);
             data2[4] += 0x01;
-        }
+        // }
 
         bindings::DelayMS(1000);
     }

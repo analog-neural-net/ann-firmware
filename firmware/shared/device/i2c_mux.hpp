@@ -17,7 +17,7 @@ template <typename ChannelT>
              std::unsigned_integral<ChannelT>
 class I2CMultiplexer : public util::Device {
 public:
-    I2CMultiplexer(shared::periph::I2CBus& i2c_bus, uint8_t mux_address)
+    constexpr I2CMultiplexer(shared::periph::I2CBus& i2c_bus, uint8_t mux_address)
         : i2c_bus_(i2c_bus), mux_address_(mux_address) {}
 
     virtual ~I2CMultiplexer() = default;
