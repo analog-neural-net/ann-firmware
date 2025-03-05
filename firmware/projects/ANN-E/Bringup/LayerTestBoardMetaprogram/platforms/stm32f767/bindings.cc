@@ -27,6 +27,7 @@
 
 // template metaporgramming include
 #include <array>
+#include <vector>
 
 extern "C" {
 /**
@@ -55,19 +56,48 @@ using namespace shared::device;
 
     constexpr uint8_t kNumi2cBuses = 3;
     constexpr uint8_t kNumi2cChannelsPerBus = 8;
+    constexpr uint8_t kNumWeightsPerNeuron
 
-    // constexpr std::array<ti::TCA9548A, kNumi2cBuses> tca9548a_muxes = {
-    //     ti::TCA9548A(mcal::i2c1, 0x70, true),
-    //     ti::TCA9548A(mcal::i2c2, 0x70, true),
-    //     ti::TCA9548A(mcal::i2c3, 0x70, true)
-    // };
-
-    //save the template programming for later
-    std::array<ti::TCA9548A, kNumi2cBuses> tca9548a_muxes = {
+    constexpr std::array<ti::TCA9548A, kNumi2cBuses> tca9548a_muxes = {
         ti::TCA9548A(mcal::i2c1, 0x70, true),
         ti::TCA9548A(mcal::i2c2, 0x70, true),
         ti::TCA9548A(mcal::i2c3, 0x70, true)
     };
+
+    constexpr std::array<std::array<I2CBusMultiplexed<ti::TCA9548AChannel>, kNumi2cChannelsPerBus>, kNumi2cBuses> i2c_channels = {{
+        {
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_A},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_B},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_C},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_D},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_E},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_F},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_G},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_H}
+        },
+        {
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[1], ti::TCA9548AChannel::CHANNEL_A},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[1], ti::TCA9548AChannel::CHANNEL_B},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[1], ti::TCA9548AChannel::CHANNEL_C},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[1], ti::TCA9548AChannel::CHANNEL_D},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[1], ti::TCA9548AChannel::CHANNEL_E},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[1], ti::TCA9548AChannel::CHANNEL_F},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[1], ti::TCA9548AChannel::CHANNEL_G},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[1], ti::TCA9548AChannel::CHANNEL_H}
+        },
+        {
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[2], ti::TCA9548AChannel::CHANNEL_A},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[2], ti::TCA9548AChannel::CHANNEL_B},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[2], ti::TCA9548AChannel::CHANNEL_C},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[2], ti::TCA9548AChannel::CHANNEL_D},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[2], ti::TCA9548AChannel::CHANNEL_E},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[2], ti::TCA9548AChannel::CHANNEL_F},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[2], ti::TCA9548AChannel::CHANNEL_G},
+            I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[2], ti::TCA9548AChannel::CHANNEL_H}
+        }
+    }};
+
+
 
     I2CBusMultiplexed<ti::TCA9548AChannel> i2c1A{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_A};
     I2CBusMultiplexed<ti::TCA9548AChannel> i2c1B{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_B};

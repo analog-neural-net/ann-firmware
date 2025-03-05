@@ -1,14 +1,20 @@
 #pragma once
 
+#include "projects/ANN-E/Bringup/LayerTestBoard/bindings.hpp"
 #include "shared/periph/analog_input.hpp"
 #include "shared/periph/analog_output.hpp"
 #include "shared/periph/gpio.hpp"
 #include "shared/periph/pwm.hpp"
 #include "shared/periph/i2c.hpp"
+#include "shared/device/digital_pot.hpp"
 
 namespace bindings {
 
 constexpr uint8_t kNumAnalogOutputs = 4;
+constexpr uint8_t kNumi2cBuses = 3;
+constexpr uint8_t kNumi2cChannelsPerBus = 8;
+constexpr uint8_t kNumWeightsPerNeuron = 12;
+constexpr uint8_t kNumNeuronsPerLayer = 4;
 
 extern shared::periph::DigitalOutput& red_led;
 extern shared::periph::DigitalOutput& green_led;
@@ -45,6 +51,10 @@ extern shared::periph::I2CBus& i2c3H;
 
 extern shared::periph::AnalogOutputGroup<kNumAnalogOutputs>&
     analog_output_group;
+
+extern std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, kNumWeightsPerNeuron>, kNumNeuronsPerLayer> pots;
+extern std::array<shared::device::DigitalPotentiometer<uint8_t>, kNumNeuronsPerLayer> bias_pots;
+extern std::array<shared::device::DigitalPotentiometer<uint8_t>, kNumNeuronsPerLayer> fb_pots;
 
 extern void DelayMs(uint32_t ms);
 extern void Init();
