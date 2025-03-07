@@ -42,10 +42,10 @@ int main() {
     bool tcon_a, tcon_b, tcon_w;
 
     for (int i = 0; i < bindings::kNumNeuronsPerLayer; i++) {
-    //     for (int j = 0; j < bindings::kNumWeightsPerNeuron; j++) {
-    //         pot_position = bindings::pots[i][j].GetPosition();
-    //         std::cout << "Neuron " << i << " Weight " << j << " Position: " << std::to_string(pot_position) << std::endl;
-    //     }
+        for (int j = 0; j < bindings::kNumWeightsPerNeuron; j++) {
+            pot_position = bindings::pots[i][j].GetPosition();
+            std::cout << "Neuron " << i << " Weight " << j << " Position: " << std::to_string(pot_position) << std::endl;
+        }
         pot_position = bindings::bias_pots[i].GetPosition();
         std::cout << "Neuron " << i << " Bias Position: " << std::to_string(pot_position) << std::endl;
         bindings::bias_pots[i].GetTerminalConnections(&tcon_a, &tcon_b, &tcon_w);

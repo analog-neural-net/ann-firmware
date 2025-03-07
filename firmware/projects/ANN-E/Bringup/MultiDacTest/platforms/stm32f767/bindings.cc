@@ -7,6 +7,9 @@
 #include "gpio.h"
 #include "i2c.h"
 
+#include "projects/ANN-E/Bringup/MultiDacTest/bindings.hpp"
+#include "shared/device/dac.hpp"
+#include "shared/device/mcp/mcp4461.hpp"
 #include "usart.h"
 #include "main.h"
 
@@ -47,11 +50,35 @@ UART_HandleTypeDef* debug_uart = &huart3;
 namespace device {
 using namespace shared::device;
 
-ti::TCA9548A tca9548a(mcal::i2c2, 0x70, true);
-I2CBusMultiplexed<ti::TCA9548AChannel> i2c1A{
-    tca9548a, ti::TCA9548AChannel::CHANNEL_A};
 
-mcp::MCP4728 dac(bindings::i2c1A, 0x60, 5.5F, 0.F);
+std::array<ti::TCA9548A, bindings::kNumi2cBuses> tca9548a_muxes = {
+    ti::TCA9548A(mcal::i2c1, 0x70, true),
+    ti::TCA9548A(mcal::i2c2, 0x70, true),
+    ti::TCA9548A(mcal::i2c3, 0x70, true)
+};
+
+//for the sake of this project we only need one channel per bus
+std::array<I2CBusMultiplexed<ti::TCA9548AChannel>, bindings::kNumAnalogOutputDevices> i2c_channels = {
+    {
+        I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[0], ti::TCA9548AChannel::CHANNEL_A},
+        I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[1], ti::TCA9548AChannel::CHANNEL_A},
+        I2CBusMultiplexed<ti::TCA9548AChannel>{tca9548a_muxes[2], ti::TCA9548AChannel::CHANNEL_A},
+    },
+
+};
+mcp::MCP4728 dacs[bindings::kNumAnalogOutputDevices] = {
+    mcp::MCP4728(i2c_channels[0], 0x60, 5.5F, 0.F),
+    mcp::MCP4728(i2c_channels[1], 0x60, 5.5F, 0.F),
+    mcp::MCP4728(i2c_channels[2], 0x60, 5.5F, 0.F),
+};
+
+mcp::MCP4728* dac_ptrs[bindings::kNumAnalogOutputDevices] = {
+    &dacs[0],
+    &dacs[1],
+    &dacs[2],
+};
+
+DigitalAnalogConverterGroup<bindings::kNumAnalogOutputDevices, bindings::kNumAnalogOutputsPerDevice> input_layer(dac_ptrs);
 }  // namespace device
 
 
@@ -65,6 +92,8 @@ shared::periph::I2CBus& i2c2 = mcal::i2c2;
 shared::periph::I2CBus& i2c3 = mcal::i2c3;
 
 shared::periph::I2CBus& i2c1A = device::i2c1A;
+shared::periph::DigitalAnalogConverterGroup& dac = device::dacs[0];
+
 shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group = device::dac;
 
 void Init() {

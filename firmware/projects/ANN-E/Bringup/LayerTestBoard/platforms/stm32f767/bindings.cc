@@ -210,10 +210,10 @@ shared::periph::I2CBus& i2c3 = mcal::i2c3;
 
 
 
-shared::periph::I2CBus& i2c1A = device::i2c_channels[2][0];
-shared::periph::I2CBus& i2c1B = device::i2c_channels[2][1];
-shared::periph::I2CBus& i2c1C = device::i2c_channels[2][2];
-shared::periph::I2CBus& i2c1D = device::i2c_channels[2][3];
+shared::periph::I2CBus& i2c1A = device::i2c_channels[2][0+4];
+shared::periph::I2CBus& i2c1B = device::i2c_channels[2][1+4];
+shared::periph::I2CBus& i2c1C = device::i2c_channels[2][2+4];
+shared::periph::I2CBus& i2c1D = device::i2c_channels[2][3+4];
 
 std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, kNumWeightsPerNeuron>, kNumNeuronsPerLayer> pots = {
     {{

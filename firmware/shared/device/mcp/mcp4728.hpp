@@ -4,8 +4,6 @@
 #include "shared/device/dac.hpp"
 #include "shared/periph/i2c.hpp"
 
-#include <iostream>
-
 namespace shared::device::mcp {
 constexpr uint8_t kMcp4728NumChannels = 4;
 
@@ -80,7 +78,6 @@ public:
 
     void SetChannelVoltageReference(VoltageRef chan_a = VoltageRef::VDD, VoltageRef chan_b = VoltageRef::VDD,
         VoltageRef chan_c = VoltageRef::VDD, VoltageRef chan_d = VoltageRef::VDD) {
-            std::cout << "Setting voltage reference" << std::endl;
             uint8_t vrefCfgByte[1];
             vrefCfgByte[0] = kMcp4728CfgVref | (static_cast<uint8_t>(chan_a) << 3) |
             (static_cast<uint8_t>(chan_b) << 2) |
