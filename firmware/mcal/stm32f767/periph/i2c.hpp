@@ -6,7 +6,6 @@
 #include "shared/comms/i2c/msg.hpp"
 #include "shared/periph/i2c.hpp"
 #include "stm32f7xx_hal.h"
-#include <iostream>
 
 namespace mcal::stm32f767::periph {
 
