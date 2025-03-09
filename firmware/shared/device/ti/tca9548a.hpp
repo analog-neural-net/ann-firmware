@@ -34,12 +34,12 @@ public:
 
     void WriteToChannel(TCA9548AChannel channel,
                         const shared::i2c::Message& msg) override {
+
         if (force_select_) {
             ForceSelectChannel(channel);
         } else {
             SoftSelectChannel(channel);
         }
-
         // Forward the message to selected channel
         i2c_bus_.Write(msg);
     }
@@ -60,8 +60,11 @@ private:
     void ForceSelectChannel(TCA9548AChannel channel) {
         uint8_t channel_select = 1 << static_cast<uint8_t>(channel);
         uint8_t select_data[] = {channel_select};
+        
         shared::i2c::Message select_msg(mux_address_, select_data,
                                         shared::i2c::MessageType::Write);
+        
+        
         i2c_bus_.Write(select_msg);
 
         channel_status_ = ChannelStatus::SELECTED;

@@ -76,6 +76,18 @@ public:
         LoadVoltages();
     }
 
+    void SetChannelVoltageReference(VoltageRef chan_a = VoltageRef::VDD, VoltageRef chan_b = VoltageRef::VDD,
+        VoltageRef chan_c = VoltageRef::VDD, VoltageRef chan_d = VoltageRef::VDD) {
+            uint8_t vrefCfgByte[1];
+            vrefCfgByte[0] = kMcp4728CfgVref | (static_cast<uint8_t>(chan_a) << 3) |
+            (static_cast<uint8_t>(chan_b) << 2) |
+            (static_cast<uint8_t>(chan_c) << 1) |
+            static_cast<uint8_t>(chan_d);
+            i2c::Message msg(address_, vrefCfgByte, i2c::MessageType::Write);
+            i2c_.Write(msg);
+}
+
+
 private:
     static constexpr uint16_t kMaxValue = 4095;  // 12-bit resolution
     static constexpr uint8_t kMcp4728CfgVref = 0x80;
@@ -98,20 +110,11 @@ private:
             return kMaxValue;
         }
 
-        return static_cast<uint16_t>((voltage - vmin_) / vref_ *
+        return static_cast<uint16_t>((voltage - vmin_) / (vref_ - vmin_) *
                                      (float)kMaxValue);
     }
 
-    void SetChannelVoltageReference(VoltageRef chan_a, VoltageRef chan_b,
-                                    VoltageRef chan_c, VoltageRef chan_d) {
-        uint8_t vrefCfgByte[1];
-        vrefCfgByte[0] = kMcp4728CfgVref | (static_cast<uint8_t>(chan_a) << 3) |
-                         (static_cast<uint8_t>(chan_b) << 2) |
-                         (static_cast<uint8_t>(chan_c) << 1) |
-                         static_cast<uint8_t>(chan_d);
-        i2c::Message msg(address_, vrefCfgByte, i2c::MessageType::Write);
-        i2c_.Write(msg);
-    }
+    
 };
 
 }  // namespace shared::device::mcp

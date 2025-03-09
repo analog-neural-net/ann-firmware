@@ -11,7 +11,6 @@ int main() {
     uint8_t data2[] = {0xAA, 0xBB, 0xCC, 0xDD, 0x00};
 
     while (true) {
-        auto button_state = bindings::button1.Read();
 
         if (button_state) {
             auto write_msg = shared::i2c::Message(
