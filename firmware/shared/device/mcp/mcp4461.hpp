@@ -24,7 +24,9 @@ private:
 
 public:
     MCP4461(periph::I2CBus& i2c, uint8_t i2c_addr)
-        : i2c_(i2c), device_addr_(i2c_addr) {}
+        : i2c_(&i2c), device_addr_(i2c_addr) {}
+
+    MCP4461(): i2c_(nullptr), device_addr_(0x2C) {}
 
     void SetPosition(uint8_t pot_index, uint8_t position) override {
         if (pot_index >= kNumPots) {
@@ -135,7 +137,7 @@ private:
     static constexpr uint8_t kMaxPosition = 255;
     static constexpr uint8_t kNumPots = 4;
 
-    periph::I2CBus& i2c_;
+    periph::I2CBus* i2c_;
     const uint8_t device_addr_;
 
     Register GetWiperReg(uint8_t pot_index) {
@@ -152,7 +154,7 @@ private:
         i2c::Message msg =
             i2c::Message(device_addr_, reg_write, i2c::MessageType::Write);
 
-        i2c_.Write(msg);
+        i2c_->Write(msg);
     }
 
     uint8_t ReadRegister(Register reg) {
@@ -165,8 +167,8 @@ private:
         i2c::Message msg2 =
             i2c::Message(device_addr_, data, i2c::MessageType::Read);
 
-        i2c_.Write(msg1);
-        i2c_.Read(msg2);
+        i2c_->Write(msg1);
+        i2c_->Read(msg2);
 
         // Data is returned as 2 bytes, but for 8-bit resoultion the MSB,
         // (data[0]) is empty
