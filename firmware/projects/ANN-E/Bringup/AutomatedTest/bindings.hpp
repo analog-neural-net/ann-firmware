@@ -3,6 +3,8 @@
 
 #include "shared/periph/analog_input.hpp"
 #include "shared/periph/analog_output.hpp"
+#include "shared/periph/analog_input.hpp"
+
 #include "shared/periph/gpio.hpp"
 #include "shared/periph/pwm.hpp"
 #include "shared/periph/i2c.hpp"
@@ -10,11 +12,13 @@
 #include "shared/periph/uart.hpp"
 
 namespace bindings {
+constexpr uint8_t kNumAnalogInputs = 12;
 
 constexpr uint8_t kNumAnalogOutputs = 4;
 constexpr uint8_t kNumi2cBuses = 3;
 constexpr uint8_t kNumi2cChannelsPerBus = 8;
 
+constexpr uint8_t kOutputLayerSize = 10;
 
 constexpr uint8_t kNumLayers = 2;
 constexpr uint8_t kNumWeightsPerNeuron = 12;
@@ -34,30 +38,18 @@ extern shared::periph::I2CBus& i2c1;
 extern shared::periph::I2CBus& i2c2;
 extern shared::periph::I2CBus& i2c3;
 
-extern shared::periph::I2CBus& i2c1A;
-extern shared::periph::I2CBus& i2c1B;
-extern shared::periph::I2CBus& i2c1C;
-extern shared::periph::I2CBus& i2c1D;
-extern shared::periph::I2CBus& i2c1E;
-extern shared::periph::I2CBus& i2c1F;
-extern shared::periph::I2CBus& i2c1G;
-extern shared::periph::I2CBus& i2c1H;
-extern shared::periph::I2CBus& i2c2A;
-extern shared::periph::I2CBus& i2c2B;
-extern shared::periph::I2CBus& i2c2C;
-extern shared::periph::I2CBus& i2c2D;
-extern shared::periph::I2CBus& i2c2E;
-extern shared::periph::I2CBus& i2c2F;
-extern shared::periph::I2CBus& i2c2G;
-extern shared::periph::I2CBus& i2c2H;
-extern shared::periph::I2CBus& i2c3A;
-extern shared::periph::I2CBus& i2c3B;
-extern shared::periph::I2CBus& i2c3C;
-extern shared::periph::I2CBus& i2c3D;
-extern shared::periph::I2CBus& i2c3E;
-extern shared::periph::I2CBus& i2c3F;
-extern shared::periph::I2CBus& i2c3G;
-extern shared::periph::I2CBus& i2c3H;
+extern shared::periph::AnalogInput& analog_input_0;
+extern shared::periph::AnalogInput& analog_input_1;
+extern shared::periph::AnalogInput& analog_input_2;
+extern shared::periph::AnalogInput& analog_input_3;
+extern shared::periph::AnalogInput& analog_input_4;
+extern shared::periph::AnalogInput& analog_input_5;
+extern shared::periph::AnalogInput& analog_input_6;
+extern shared::periph::AnalogInput& analog_input_7;
+extern shared::periph::AnalogInput& analog_input_8;
+extern shared::periph::AnalogInput& analog_input_9;
+
+extern std::array<shared::periph::AnalogInput, kOutputLayerSize> adc_channels;
 
 extern shared::periph::AnalogOutputGroup<kNumAnalogOutputs>&
     analog_output_group_0;
