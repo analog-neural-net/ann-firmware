@@ -41,6 +41,9 @@ AnalogInput analog_input_7{&hadc3, ADC_CHANNEL_7};
 AnalogInput analog_input_8{&hadc3, ADC_CHANNEL_8};
 AnalogInput analog_input_9{&hadc3, ADC_CHANNEL_9};
 
+AnalogInput current_sensor_read{&hadc2, ADC_CHANNEL_6};
+AnalogInput current_sensor_ref{&hadc2, ADC_CHANNEL_7};
+
 
 
 DigitalOutput red_led(red_led_GPIO_Port, red_led_Pin);
