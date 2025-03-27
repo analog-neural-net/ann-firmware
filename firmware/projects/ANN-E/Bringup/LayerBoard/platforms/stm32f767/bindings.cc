@@ -2,12 +2,16 @@
 /// @date 2025-03-02
 
 
+#include <algorithm>
+#include <cmath>
 #include <iostream>
 
 // cubemx files
 #include "gpio.h"
 #include "i2c.h"
+#include "adc.h"
 
+#include "projects/ANN-E/Bringup/LayerBoard/bindings.hpp"
 #include "usart.h"
 #include "main.h"
 
@@ -26,6 +30,8 @@
 #include "shared/device/digital_pot.hpp"
 #include "shared/periph/i2c.hpp"
 
+#include "shared/periph/analog_input.hpp"
+#include "mcal/stm32f767/periph/analog_input.hpp"
 // template metaporgramming include
 #include <array>
 
@@ -46,6 +52,17 @@ using namespace stm32f767::periph;
 DigitalOutput red_led(red_led_GPIO_Port, red_led_Pin);
 DigitalOutput green_led(green_led_GPIO_Port, green_led_Pin);
 DigitalOutput heartbeat(UC_Heartbeat_GPIO_Port, UC_Heartbeat_Pin);
+
+AnalogInput analog_input_0{&hadc3, ADC_CHANNEL_0};
+AnalogInput analog_input_1{&hadc3, ADC_CHANNEL_1};
+AnalogInput analog_input_2{&hadc3, ADC_CHANNEL_2};
+AnalogInput analog_input_3{&hadc3, ADC_CHANNEL_3};
+AnalogInput analog_input_4{&hadc3, ADC_CHANNEL_4};
+AnalogInput analog_input_5{&hadc3, ADC_CHANNEL_5};
+AnalogInput analog_input_6{&hadc3, ADC_CHANNEL_6};
+AnalogInput analog_input_7{&hadc3, ADC_CHANNEL_7};
+AnalogInput analog_input_8{&hadc3, ADC_CHANNEL_8};
+AnalogInput analog_input_9{&hadc3, ADC_CHANNEL_9};
 
 I2CBus i2c1(&hi2c1);
 I2CBus i2c2(&hi2c2);
@@ -466,6 +483,20 @@ shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group_0 = de
 shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group_1 = device::dac1;
 shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group_2 = device::dac2;
 
+shared::periph::AnalogInput* adc_channels[10] = {
+    &mcal::analog_input_0,
+    &mcal::analog_input_1,
+    &mcal::analog_input_2,
+    &mcal::analog_input_3,
+    &mcal::analog_input_4,
+    &mcal::analog_input_5,
+    &mcal::analog_input_6,
+    &mcal::analog_input_7,
+    &mcal::analog_input_8,
+    &mcal::analog_input_9,
+};
+
+
 
 std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, bindings::kNumNeuronsPerLayer>, bindings::kNumLayers> bias_pots = device::bias_pots;
 std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, bindings::kNumNeuronsPerLayer>, bindings::kNumLayers> fb_pots = device::feedback_pots;
@@ -493,6 +524,20 @@ void Init() {
 void DelayMs(uint32_t ms)
 {
     HAL_Delay(ms);
+}
+
+void SoftMax(float logits[kNumOutputs]){
+    float max = *std::max_element(logits, logits + kNumOutputs);
+
+    float exp_sum = 0.0f;
+    for(int i = 0; i < kNumOutputs; i++){
+        logits[i] = std::exp(logits[i] - max);
+        exp_sum += logits[i];
+    }
+    for(int i = 0; i < kNumOutputs; i++){
+        logits[i] /= exp_sum;
+    }
+    
 }
 
 }  // namespace bindings

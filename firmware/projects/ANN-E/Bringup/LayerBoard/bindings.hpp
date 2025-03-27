@@ -22,6 +22,7 @@ constexpr uint8_t kNumWeightsPerNeuron = 12;
 //needs only be the max size, of any layer, becasue we can afford to allocate the extra space currently
 constexpr uint8_t kNumNeuronsPerLayer = 12;
 constexpr uint8_t kNumNeuronsPerLayerOutput = 10;
+constexpr uint8_t kNumOutputs = 10;
 
 
 extern shared::periph::DigitalOutput& red_led;
@@ -58,6 +59,10 @@ extern shared::periph::I2CBus& i2c3E;
 extern shared::periph::I2CBus& i2c3F;
 extern shared::periph::I2CBus& i2c3G;
 extern shared::periph::I2CBus& i2c3H;
+
+extern shared::periph::AnalogInput* adc_channels[kNumOutputs];
+
+void SoftMax(float logits[kNumOutputs]);
 
 extern shared::periph::AnalogOutputGroup<kNumAnalogOutputs>&
     analog_output_group_0;

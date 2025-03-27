@@ -9,7 +9,8 @@
 #include "bindings.hpp"
 
 
-#include "network_cfg.hh"
+#include "network_cfg.hpp"
+#include "projects/ANN-E/Bringup/LayerBoard/bindings.hpp"
 
 float bytesToFloat(uint8_t* bytes) {
     int32_t i = 0;
@@ -22,6 +23,8 @@ float input_values[3][4] = {
     {0.1, 0.1, 0.1, 0.1},
     {0.1, 0.1, 0.1, 0.1}
 };
+
+float output_values[10];
 
 int main() {
     bindings::Init();
@@ -77,82 +80,23 @@ int main() {
         );
     }
 
-
-
-    // uint8_t pot_position;
-    // uint8_t tcon_config;
-    // bool tcon_a, tcon_b, tcon_w;
-
-    // for (int i = 0; i < bindings::kNumNeuronsPerLayer; i++) {
-    //     for (int j = 0; j < bindings::kNumWeightsPerNeuron; j++) {
-    //         pot_position = bindings::pots[0][i][j].GetPosition();
-    //         std::cout << "Layer " << 0 << " Neuron " << i << " Weight " << j << " Position: " << std::to_string(pot_position) << std::endl;
-    //     }
-    //     pot_position = bindings::bias_pots[0][i].GetPosition();
-    //     std::cout << "Layer " << 0 << " Neuron " << i << " Bias Position: " << std::to_string(pot_position) << std::endl;
-    //     bindings::bias_pots[0][i].GetTerminalConnections(&tcon_a, &tcon_b, &tcon_w);
-    //     std::cout << "Layer " << 0 << " Neuron " << i << " Bias Terminal Connections: " << std::to_string(tcon_a) << " " << std::to_string(tcon_b) << " " << std::to_string(tcon_w) << std::endl;
- 
-    //     pot_position  = bindings::fb_pots[0][i].GetPosition();
-    //     std::cout << "Layer " << 0 << " Neuron " << i << " Feedback Position: " << std::to_string(pot_position) << std::endl;
-    //     bindings::fb_pots[0][i].GetTerminalConnections(&tcon_a, &tcon_b, &tcon_w);
-    //     std::cout << "Layer " << 0 << " Neuron " << i << " Feedback Terminal Connections: " << std::to_string(tcon_a) << " " << std::to_string(tcon_b) << " " << std::to_string(tcon_w) << std::endl;
-    // }
-
-    // for (int i = 0; i < bindings::kNumNeuronsPerLayerOutput; i++) {
-    //     for (int j = 0; j < bindings::kNumWeightsPerNeuron; j++) {
-    //         pot_position = bindings::pots[1][i][j].GetPosition();
-    //         std::cout << "Layer " << 1  << " Neuron " << i << " Weight " << j << " Position: " << std::to_string(pot_position) << std::endl;
-    //     }
-    //     pot_position = bindings::bias_pots[1][i].GetPosition();
-    //     std::cout << "Layer " << 1  << " Neuron " << i << " Bias Position: " << std::to_string(pot_position) << std::endl;
-    //     bindings::bias_pots[1][i].GetTerminalConnections(&tcon_a, &tcon_b, &tcon_w);
-    //     std::cout << "Layer " << 1  << " Neuron " << i << " Bias Terminal Connections: " << std::to_string(tcon_a) << " " << std::to_string(tcon_b) << " " << std::to_string(tcon_w) << std::endl;
- 
-    //     pot_position  = bindings::fb_pots[0][1].GetPosition();
-    //     std::cout << "Layer "  << 1 << " Neuron " << i << " Feedback Position: " << std::to_string(pot_position) << std::endl;
-    //     bindings::fb_pots[1][i].GetTerminalConnections(&tcon_a, &tcon_b, &tcon_w);
-    //     std::cout << "Layer "  << 1 << " Neuron " << i << " Feedback Terminal Connections: " << std::to_string(tcon_a) << " " << std::to_string(tcon_b) << " " << std::to_string(tcon_w) << std::endl;
-    // }
-
-    
-
-    // bool light = false;
-    // int i = 0;
-    // int j = 0;
-    // std::string placeholder;
-
-
-    // std::cout <<"init config" << std::endl;
-    // std::cin >> placeholder;
     bool light = false;
+    uint8_t input_buf[53] = {};
+    uint8_t output_buf[40] = {};
+
     while (1) {
-        // for (i = 0; i < 3; i++){
-        //     for(j = 0; j < 4; j++){
-        //         input_values[i][j] = -1.0f;
-        //         std::cout << " i: " << i << " j: " << j << " weight:" << (i <<2) + j  << std::endl;
-
-        //         bindings::analog_output_group_0.SetAndLoadAllVoltages(input_values[0]);
-        //         bindings::analog_output_group_1.SetAndLoadAllVoltages(input_values[1]);
-        //         bindings::analog_output_group_2.SetAndLoadAllVoltages(input_values[2]);            
-        //         std::cin >> placeholder;
-
-        //         input_values[i][j] = 0.0f;
-        //     }
-        // }
 
         bindings::red_led.Set(light);
 
-        uint8_t buf[53] = {0};
         // uint8_t check[] = "ANN-E";
-        shared::uart::Message<shared::uart::MessageType::Receive> msg{buf};
-        bindings::uart_bus.ReceiveBlocking(msg);
+        shared::uart::Message<shared::uart::MessageType::Receive> PCA_components{input_buf};
+        bindings::uart_bus.ReceiveBlocking(PCA_components);
         for(int i = 0; i < 12; i++){
-            input_values[i/4][i%4] = bytesToFloat(msg.Data() + 5 + i*4);
+            input_values[i/4][i%4] = bytesToFloat(PCA_components.Data() + 5 + i*4);
         }
     
         for(int i = 0; i < 12; i++){
-            std::cout << std::to_string (input_values[i/4][i%4]) << std::endl;
+            std::cout << std::to_string(input_values[i/4][i%4]) << std::endl;
         }
     
         bindings::green_led.Set(1);
@@ -161,8 +105,28 @@ int main() {
         bindings::analog_output_group_1.SetAndLoadAllVoltages(input_values[1]);
         bindings::analog_output_group_2.SetAndLoadAllVoltages(input_values[2]);
 
+        for (int i = 0; i < 10; i++) {
+            output_values[i] = 0.f;
+            for(int j = 0; j < 16; j++){
+                output_values[i] +=  bindings::adc_channels[i]->ReadVoltage() / 16.f;
+            }
+        }
+
+        bindings::SoftMax(output_values);
+
+        for (int i = 0; i < 10; i++) {
+            output_buf[i * 4] = (uint8_t) (output_values[i] * 10000.f);
+            output_buf[i * 4 + 1] = (uint8_t) ((output_values[i] * 10000.f)) >> 8;
+            output_buf[i * 4 + 2] = (uint8_t) ((output_values[i] * 10000.f)) >> 16;
+            output_buf[i * 4 + 3] = (uint8_t) ((output_values[i] * 10000.f)) >> 24;
+        }
+        shared::uart::Message<shared::uart::MessageType::Transmit> SoftMax_Output{output_buf};
+
+        
         light = !light;
-        bindings::DelayMs(500);        
+        bindings::DelayMs(500);
+        
+        
     }
 
     return 0;
