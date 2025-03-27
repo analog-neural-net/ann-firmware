@@ -49,7 +49,7 @@ extern shared::periph::AnalogInput& analog_input_7;
 extern shared::periph::AnalogInput& analog_input_8;
 extern shared::periph::AnalogInput& analog_input_9;
 
-extern std::array<shared::periph::AnalogInput, kOutputLayerSize> adc_channels;
+extern std::array<shared::periph::AnalogInput*, kOutputLayerSize> adc_channels;
 
 extern shared::periph::AnalogOutputGroup<kNumAnalogOutputs>&
     analog_output_group_0;
@@ -66,6 +66,7 @@ extern std::array<std::array<std::array<shared::device::DigitalPotentiometer<uin
 extern std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, bindings::kNumNeuronsPerLayer>, bindings::kNumLayers> bias_pots;
 extern std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, bindings::kNumNeuronsPerLayer>, bindings::kNumLayers> fb_pots;
 
+extern uint32_t GetTimeMs();
 extern void DelayMs(uint32_t ms);
 extern void Init();
 
