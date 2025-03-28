@@ -95,9 +95,9 @@ int main() {
             input_values[i/4][i%4] = bytesToFloat(PCA_components.Data() + 5 + i*4);
         }
     
-        for(int i = 0; i < 12; i++){
-            std::cout << std::to_string(input_values[i/4][i%4]) << std::endl;
-        }
+        // for(int i = 0; i < 12; i++){
+        //     std::cout << std::to_string(input_values[i/4][i%4]) << std::endl;
+        // }
     
         bindings::green_led.Set(1);
     
@@ -105,23 +105,25 @@ int main() {
         bindings::analog_output_group_1.SetAndLoadAllVoltages(input_values[1]);
         bindings::analog_output_group_2.SetAndLoadAllVoltages(input_values[2]);
 
-        for (int i = 0; i < 10; i++) {
-            output_values[i] = 0.f;
-            for(int j = 0; j < 16; j++){
-                output_values[i] +=  bindings::adc_channels[i]->ReadVoltage() / 16.f;
-            }
-        }
+        // for (int i = 0; i < 10; i++) {
+        //     output_values[i] = 0.f;
+        //     for(int j = 0; j < 16; j++){
+        //         output_values[i] +=  bindings::adc_channels[i]->ReadVoltage() / 16.f;
+        //     }
+        // }
 
-        bindings::SoftMax(output_values);
+        // bindings::SoftMax(output_values);
 
-        for (int i = 0; i < 10; i++) {
-            output_buf[i * 4] = (uint8_t) (output_values[i] * 10000.f);
-            output_buf[i * 4 + 1] = (uint8_t) ((output_values[i] * 10000.f)) >> 8;
-            output_buf[i * 4 + 2] = (uint8_t) ((output_values[i] * 10000.f)) >> 16;
-            output_buf[i * 4 + 3] = (uint8_t) ((output_values[i] * 10000.f)) >> 24;
-        }
-        shared::uart::Message<shared::uart::MessageType::Transmit> SoftMax_Output{output_buf};
-
+        // int32_t value;
+        // for (int i = 0; i < 10; i++) {
+        //     value = (int32_t) (output_values[i] * 10000.f);
+        //     output_buf[i * 4] = (uint8_t) (value & 0xFF);
+        //     output_buf[i * 4 + 1] = (uint8_t) (value >> 8) & 0xFF;
+        //     output_buf[i * 4 + 2] = (uint8_t) (value >> 16) & 0xFF;
+        //     output_buf[i * 4 + 3] = (uint8_t) (value >> 24) & 0xFF;
+        // }
+        // shared::uart::Message<shared::uart::MessageType::Transmit> SoftMax_Output{output_buf};
+        // bindings::uart_bus.Transmit(SoftMax_Output);
         
         light = !light;
         bindings::DelayMs(500);
