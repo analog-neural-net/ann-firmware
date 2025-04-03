@@ -71,24 +71,26 @@ public:
     DigitalPotentiometer(
         DigitalPotentiometerController<ResolutionT>& controller,
         uint8_t pot_index)
-        : controller_(controller), pot_index_(pot_index) {}
+        : controller_(&controller), pot_index_(pot_index) {}
+
+    DigitalPotentiometer() : controller_(nullptr), pot_index_(0) {}
 
     void SetPosition(ResolutionT position) {
-        controller_.SetPosition(pot_index_, position);
+        controller_->SetPosition(pot_index_, position);
     }
 
     ResolutionT GetPosition() {
-        return controller_.GetPosition(pot_index_);
+        return controller_->GetPosition(pot_index_);
     }
 
     bool GetTerminalConnection(DigitalPotTerminal terminal) {
-        return controller_.GetTerminalConnection(pot_index_, terminal);
+        return controller_->GetTerminalConnection(pot_index_, terminal);
     }
 
     void GetTerminalConnections(bool* terminal_connected_a,
                                 bool* terminal_connected_b,
                                 bool* terminal_connected_w) {
-        controller_.GetTerminalConnections(pot_index_, terminal_connected_a,
+        controller_->GetTerminalConnections(pot_index_, terminal_connected_a,
                                            terminal_connected_b,
                                            terminal_connected_w);
     }
@@ -96,19 +98,19 @@ public:
     void SetTerminalConnections(bool terminal_connect_a,
                                 bool terminal_connect_b,
                                 bool terminal_connect_w) {
-        controller_.SetTerminalConnections(pot_index_, terminal_connect_a,
+        controller_->SetTerminalConnections(pot_index_, terminal_connect_a,
                                            terminal_connect_b,
                                            terminal_connect_w);
     }
 
     void SetTerminalConnection(DigitalPotTerminal terminal,
                                bool terminal_connect) {
-        controller_.SetTerminalConnection(pot_index_, terminal, terminal_connect);
+        controller_->SetTerminalConnection(pot_index_, terminal, terminal_connect);
     }
 
 private:
-    DigitalPotentiometerController<ResolutionT>& controller_;
-    const uint8_t pot_index_;
+    DigitalPotentiometerController<ResolutionT>* controller_;
+    uint8_t pot_index_;
 };
 
 }  // namespace shared::device
