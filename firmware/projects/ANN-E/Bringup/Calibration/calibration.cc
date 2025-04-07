@@ -2,7 +2,7 @@
 #include "calibration.hpp"
 
 #include <iostream>
-#include <string>
+#include <cstring>
 
 #include "bindings.hpp"
 #include "network_cfg.hpp"
@@ -328,6 +328,20 @@ float outputLayerWeights[bindings::kNumNeuronsPerLayerOutput]
                             },
 };
 
+float outputLayerBiases[bindings::kNumNeuronsPerLayerOutput] = {
+    -1.6996935606002808,
+    -4.510126113891602,
+    -3.427090883255005,
+    2.1081109046936035,
+    -3.0795164108276367,
+    1.0337637662887573,
+    -5.349061965942383,
+    -0.45270347595214844,
+    -0.1276034265756607,
+    -0.9508624076843262,
+    };
+    
+
 void OpenAllTerminals() {
     for (int i = 0; i < bindings::kNumNeuronsPerLayer; i++) {
         for (int j = 0; j < bindings::kNumWeightsPerNeuron; j++) {
@@ -429,6 +443,14 @@ float getIdealWeight(uint8_t layer, uint8_t neuron, uint8_t weight) {
     return 0;
 }
 
+float collectReading(shared::periph::AnalogInput* measuring_channel) {
+    float reading = 0;
+    for(int i = 0; i < 25; i++) {
+        reading += StmAdcToANNVoltage(measuring_channel->ReadVoltage());
+    }
+    return reading / 25.f;
+}
+
 void calibrateWeight(uint8_t layer, uint8_t neuron, uint8_t weight) {
     auto pot = bindings::pots[layer][neuron][weight];
     auto fb_pot = bindings::fb_pots[layer][neuron];
@@ -472,11 +494,13 @@ void calibrateWeight(uint8_t layer, uint8_t neuron, uint8_t weight) {
 
     if(layer == 1){
         pot.SetPosition(0);
-        float min_weight_error = std::abs(StmAdcToANNVoltage(measuring_channel->ReadVoltage()) - ideal_weight);
+        float min_weight_error = 6.f; //greater than max possible weight
         uint8_t min_position = 0;
+        float current_error;
         for(int i = 0; i < 255; i++, pot++){
-            if (std::abs(StmAdcToANNVoltage(measuring_channel->ReadVoltage()) - ideal_weight) < min_weight_error){
-                min_weight_error = std::abs(StmAdcToANNVoltage(measuring_channel->ReadVoltage()) - ideal_weight);
+            current_error = collectReading(measuring_channel);
+            if (std::abs(current_error - ideal_weight) < min_weight_error){
+                min_weight_error = std::abs(current_error - ideal_weight);
                 min_position = pot.GetPosition();
             }
         }
@@ -488,11 +512,13 @@ void calibrateWeight(uint8_t layer, uint8_t neuron, uint8_t weight) {
     }
     if(layer == 0){
         pot.SetPosition(0);
-        float min_weight_error = std::abs(StmAdcToANNVoltage(measuring_channel->ReadVoltage()) - std::abs(ideal_weight));
+        float min_weight_error = 6.f; //greater than max possible weight
         uint8_t min_position = 0;
+        float current_error;
         for(int i = 0; i < 255; i++, pot++){
-            if (std::abs(StmAdcToANNVoltage(measuring_channel->ReadVoltage()) - std::abs(ideal_weight)) < min_weight_error){
-                min_weight_error = std::abs(StmAdcToANNVoltage(measuring_channel->ReadVoltage()) - std::abs(ideal_weight));
+            current_error = collectReading(measuring_channel);
+            if (std::abs(current_error - std::abs(ideal_weight)) < min_weight_error){
+                min_weight_error = std::abs(current_error - std::abs(ideal_weight));
                 min_position = pot.GetPosition();
             }
         }
@@ -507,9 +533,9 @@ void calibrateWeight(uint8_t layer, uint8_t neuron, uint8_t weight) {
     // std::cout << "Measuring channel: "
     //           << StmAdcToANNVoltage(measuring_channel->ReadVoltage())
     //           << std::endl;
-    std::cout << "set " << std::to_string(layer) << " "
-              << std::to_string(neuron) << " " << std::to_string(weight)
-              << " to " << std::to_string(pot.GetPosition()) << std::endl;
+    // std::cout << "set " << std::to_string(layer) << " "
+    //           << std::to_string(neuron) << " " << std::to_string(weight)
+    //           << " to " << std::to_string(pot.GetPosition()) << std::endl;
 
     // reset cal config
     if (layer == 0) {
@@ -520,6 +546,48 @@ void calibrateWeight(uint8_t layer, uint8_t neuron, uint8_t weight) {
     }
     pot.SetTerminalConnections(false, false, false);
     fb_pot.SetTerminalConnections(false, false, false);
+}
+
+void calibrateOutputLayerBiases() {
+    OpenAllTerminals();
+    for (int i = 0; i < bindings::kNumNeuronsPerLayerOutput; i++) {
+        auto pot = bindings::bias_pots[1][i];
+        auto fb_pot = bindings::fb_pots[1][i];
+
+        pot.SetPosition(bias_pot_positions_2[i]);
+        pot.SetTerminalConnections(bias_tcona_settings_2[i],
+                                   bias_tconb_settings_2[i],
+                                   bias_tconw_settings_2[i]);
+        fb_pot.SetPosition(feedback_pot_positions_2[i]);
+        fb_pot.SetTerminalConnections(feedback_tcona_settings_2[i],
+                                      feedback_tconb_settings_2[i],
+                                      feedback_tconw_settings_2[i]);
+
+        bindings::DelayMs(10);
+        configureInputLayer(1, i, 0);
+
+        shared::periph::AnalogInput* measuring_channel =
+            get_measuring_channel(1, i, 0);
+        float ideal_weight = outputLayerBiases[i];
+
+        float min_weight_error = 6.f; //greater than max possible weight
+        uint8_t min_position = 0;
+        float current_error;
+        for(int i = 0; i < 255; i++, pot++){
+            current_error = collectReading(measuring_channel);
+            if (std::abs(current_error - ideal_weight) < min_weight_error){
+                min_weight_error = std::abs(current_error - ideal_weight);
+                min_position = pot.GetPosition();
+            }
+        }
+        bias_pot_positions_2[i] = min_position;
+        std::cout << "set " << "bias "
+              << std::to_string(i)
+              << " to " << std::to_string(min_position) << std::endl;
+
+        
+
+    }
 }
 
 float StmAdcToANNVoltage(float adc_reading) {

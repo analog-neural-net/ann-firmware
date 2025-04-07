@@ -87,7 +87,7 @@ int main() {
     uint8_t buf[5] = {};
     bindings::red_led.Set(light);
     int test;
-    for (test = 0; test < test_cfg::test_size; test++) {
+    for (test = 0; test < 180 && test < test_cfg::test_size; test++) {
         // shared::uart::Message<shared::uart::MessageType::Receive> msg{buf};
         // bindings::uart_bus.ReceiveBlocking(msg);
 
@@ -100,7 +100,7 @@ int main() {
         bindings::analog_output_group_1.SetAndLoadAllVoltages(input_values[1]);
         bindings::analog_output_group_2.SetAndLoadAllVoltages(input_values[2]);
 
-        bindings::DelayMs(1);
+        bindings::DelayMs(1000);
 
         output_values[0] = bindings::analog_input_0.ReadVoltage();
         output_values[1] = bindings::analog_input_1.ReadVoltage();
@@ -156,7 +156,7 @@ int main() {
     bindings::green_led.Set(1);
 
     light = !light;
-    bindings::DelayMs(500);
+    bindings::DelayMs(100);
 
     while (1) {
         bindings::red_led.Set(light);

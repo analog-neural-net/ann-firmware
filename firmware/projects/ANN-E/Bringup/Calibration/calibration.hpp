@@ -13,6 +13,7 @@ namespace calibration {
     extern float middleLayerWeights[bindings::kNumNeuronsPerLayer][bindings::kNumWeightsPerNeuron];
     extern float outputLayerWeights[bindings::kNumNeuronsPerLayerOutput][bindings::kNumWeightsPerNeuron];
     extern void calibrateWeight(uint8_t layer, uint8_t neuron, uint8_t weight);
+    extern void calibrateOutputLayerBiases();
     extern void configureInputLayer(uint8_t layer, uint8_t neuron, uint8_t weight);
     extern void OpenAllTerminals();
     extern void EnablePassThrough(uint8_t layer, uint8_t neuron, uint8_t weight);

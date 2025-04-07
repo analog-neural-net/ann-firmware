@@ -32,6 +32,9 @@
 
 #include "shared/periph/analog_input.hpp"
 #include "mcal/stm32f767/periph/analog_input.hpp"
+
+#include "shared/device/current_sensor.hpp"
+#include "shared/device/ace/mca110153.hpp"
 // template metaporgramming include
 #include <array>
 
@@ -63,6 +66,9 @@ AnalogInput analog_input_6{&hadc3, ADC_CHANNEL_6};
 AnalogInput analog_input_7{&hadc3, ADC_CHANNEL_7};
 AnalogInput analog_input_8{&hadc3, ADC_CHANNEL_8};
 AnalogInput analog_input_9{&hadc3, ADC_CHANNEL_9};
+
+AnalogInput current_sensor_read{&hadc2, ADC_CHANNEL_6};
+AnalogInput current_sensor_ref{&hadc2, ADC_CHANNEL_7};
 
 I2CBus i2c1(&hi2c1);
 I2CBus i2c2(&hi2c2);
@@ -285,6 +291,7 @@ using namespace shared::device;
 
 
 
+    ace::MCA1101_5_3 current_sensor(mcal::current_sensor_ref, mcal::current_sensor_read);
 
     // // single wn block
 
@@ -420,68 +427,12 @@ shared::periph::UartBus& uart_bus = mcal::uart_bus;
 
 
 std::array<std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, kNumWeightsPerNeuron>, bindings::kNumNeuronsPerLayer>, bindings::kNumLayers> pots = device::weight_pots;
-// std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, kNumWeightsPerNeuron>, bindings::kNumNeuronsPerLayer> pots = {{
-//     {
-//         device::pot_l0n0w0,
-//         device::pot_l0n0w1,
-//         device::pot_l0n0w2,
-//         device::pot_l0n0w3,
-//         device::pot_l0n0w4,
-//         device::pot_l0n0w5,
-//         device::pot_l0n0w6,
-//         device::pot_l0n0w7,
-//         device::pot_l0n0w8,
-//         device::pot_l0n0w9,
-//         device::pot_l0n0w10,
-//         device::pot_l0n0w11
-//     },
-//     {
-//         device::pot_l0n1w0,
-//         device::pot_l0n1w1,
-//         device::pot_l0n1w2,
-//         device::pot_l0n1w3,
-//         device::pot_l0n1w4,
-//         device::pot_l0n1w5,
-//         device::pot_l0n1w6,
-//         device::pot_l0n1w7,
-//         device::pot_l0n1w8,
-//         device::pot_l0n1w9,
-//         device::pot_l0n1w10,
-//         device::pot_l0n1w11
-//     },
-//     {
-//         device::pot_l0n2w0,
-//         device::pot_l0n2w1,
-//         device::pot_l0n2w2,
-//         device::pot_l0n2w3,
-//         device::pot_l0n2w4,
-//         device::pot_l0n2w5,
-//         device::pot_l0n2w6,
-//         device::pot_l0n2w7,
-//         device::pot_l0n2w8,
-//         device::pot_l0n2w9,
-//         device::pot_l0n2w10,
-//         device::pot_l0n2w11
-//     },
-//     {
-//         device::pot_l0n3w0,
-//         device::pot_l0n3w1,
-//         device::pot_l0n3w2,
-//         device::pot_l0n3w3,
-//         device::pot_l0n3w4,
-//         device::pot_l0n3w5,
-//         device::pot_l0n3w6,
-//         device::pot_l0n3w7,
-//         device::pot_l0n3w8,
-//         device::pot_l0n3w9,
-//         device::pot_l0n3w10,
-//         device::pot_l0n3w11
-// }
-// }};
 
 shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group_0 = device::dac0;
 shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group_1 = device::dac1;
 shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group_2 = device::dac2;
+
+shared::device::CurrentSensor& current_sensor = device::current_sensor;
 
 shared::periph::AnalogInput* adc_channels[10] = {
     &mcal::analog_input_0,
@@ -507,6 +458,10 @@ void Init() {
     HAL_Init();
     MX_GPIO_Init();
     MX_USART3_UART_Init();
+
+    MX_ADC3_Init();
+    MX_ADC2_Init();
+
     
     MX_I2C1_Init();
     MX_I2C2_Init();

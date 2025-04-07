@@ -12,6 +12,7 @@
 
 #include "bindings.hpp"
 #include "network_cfg.hpp"
+#include "projects/ANN-E/Bringup/Calibration/calibration.hpp"
 #include "test_cfg.hpp"
 #include "calibration.hpp"
 
@@ -38,6 +39,7 @@ int main(){
         }
         std::cout << std::endl;
     }
+    calibration::calibrateOutputLayerBiases();
 
     for (int i = 0; i < bindings::kNumNeuronsPerLayer; i++) {
         for (int j = 0; j < bindings::kNumWeightsPerNeuron; j++) {
