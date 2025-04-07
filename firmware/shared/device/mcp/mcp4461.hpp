@@ -173,8 +173,6 @@ private:
 
         i2c::Message msg =
             i2c::Message(device_addr_, reg_write, i2c::MessageType::Write);
-
-
         i2c_->Write(msg);
     }
 
