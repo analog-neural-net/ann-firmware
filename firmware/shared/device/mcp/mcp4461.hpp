@@ -6,6 +6,8 @@
 #include "shared/device/digital_pot.hpp"
 #include "shared/periph/i2c.hpp"
 
+#include <iostream>
+
 namespace shared::device::mcp {
 
 class MCP4461 : public DigitalPotentiometerController<uint8_t> {
@@ -19,8 +21,10 @@ private:
         TCON0 = 0x04,
         TCON1 = 0x0A,
     };
-
+    constexpr static uint8_t POT_INCREMENT = 0b01 << 2;
+    constexpr static uint8_t POT_DECREMENT = 0b10 << 2;
     constexpr static uint8_t POT_READ = 0b11 << 2;
+
 
 public:
     MCP4461(periph::I2CBus& i2c, uint8_t i2c_addr)
@@ -132,6 +136,22 @@ public:
         SetTerminalConnections(pot_index, terminal_a, terminal_b, terminal_w);
     }
 
+    void IncrementPosition(uint8_t pot_index) override {
+        if (pot_index >= kNumPots) {
+            return;
+        }
+        Register reg = GetWiperReg(pot_index);
+        IncrementRegister(reg);
+    }
+
+    void DecrementPosition(uint8_t pot_index) override {
+        if (pot_index >= kNumPots) {
+            return;
+        }
+        Register reg = GetWiperReg(pot_index);
+        DecrementRegister(reg);
+    }
+
 private:
     // MCP4461 using 8-bit resolution (0-255)
     static constexpr uint8_t kMaxPosition = 255;
@@ -154,6 +174,7 @@ private:
         i2c::Message msg =
             i2c::Message(device_addr_, reg_write, i2c::MessageType::Write);
 
+
         i2c_->Write(msg);
     }
 
@@ -173,6 +194,22 @@ private:
         // Data is returned as 2 bytes, but for 8-bit resoultion the MSB,
         // (data[0]) is empty
         return data[1];
+    }
+
+    void IncrementRegister(Register reg) {
+        uint8_t cmd[] = {
+            static_cast<uint8_t>((static_cast<uint8_t>(reg) << 4) | POT_INCREMENT)};
+        i2c::Message msg =
+            i2c::Message(device_addr_, cmd, i2c::MessageType::Write);
+        i2c_->Write(msg);
+    }
+
+    void DecrementRegister(Register reg) {
+        uint8_t cmd[] = {
+            static_cast<uint8_t>((static_cast<uint8_t>(reg) << 4) | POT_DECREMENT)};
+        i2c::Message msg =
+            i2c::Message(device_addr_, cmd, i2c::MessageType::Write);
+        i2c_->Write(msg);
     }
 };
 
