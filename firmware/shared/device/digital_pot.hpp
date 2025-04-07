@@ -57,6 +57,9 @@ public:
     virtual void SetTerminalConnection(uint8_t pot_index,
                                        DigitalPotTerminal terminal,
                                        bool terminal_connect) = 0;
+
+    virtual void IncrementPosition(uint8_t pot_index) = 0;
+    virtual void DecrementPosition(uint8_t pot_index) = 0;
 };
 
 // Template deduction guide
@@ -107,6 +110,33 @@ public:
                                bool terminal_connect) {
         controller_->SetTerminalConnection(pot_index_, terminal, terminal_connect);
     }
+
+    void IncrementPosition() { controller_->IncrementPosition(pot_index_); }
+    void DecrementPosition() { controller_->DecrementPosition(pot_index_); }
+
+    //pre-increment (++pot)
+    DigitalPotentiometer& operator++() {
+        IncrementPosition();
+        return *this;
+    }
+
+    //no use adding an actual post-operation, as the return is the same physical pot
+    DigitalPotentiometer& operator++(int) {
+        IncrementPosition();
+        return *this;
+    }
+
+    //pre-decrement (--pot)
+    DigitalPotentiometer& operator--() {
+        DecrementPosition();
+        return *this;
+    }
+    
+    DigitalPotentiometer& operator--(int) {
+        DecrementPosition();
+        return *this;
+    }
+
 
 private:
     DigitalPotentiometerController<ResolutionT>* controller_;
