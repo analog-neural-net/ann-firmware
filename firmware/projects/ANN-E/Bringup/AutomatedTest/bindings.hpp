@@ -14,7 +14,10 @@
 namespace bindings {
 constexpr uint8_t kNumAnalogInputs = 12;
 
-constexpr uint8_t kNumAnalogOutputs = 4;
+constexpr uint8_t kNumOutputsPerDac = 4;
+constexpr uint8_t kNumDacs = 3;
+constexpr uint8_t kInputLayerDim = kNumOutputsPerDac * kNumDacs;
+
 constexpr uint8_t kNumi2cBuses = 3;
 constexpr uint8_t kNumi2cChannelsPerBus = 8;
 
@@ -51,14 +54,7 @@ extern shared::periph::AnalogInput& analog_input_9;
 
 extern std::array<shared::periph::AnalogInput*, kOutputLayerSize> adc_channels;
 
-extern shared::periph::AnalogOutputGroup<kNumAnalogOutputs>&
-    analog_output_group_0;
-
-extern shared::periph::AnalogOutputGroup<kNumAnalogOutputs>&
-    analog_output_group_1;
-
-extern shared::periph::AnalogOutputGroup<kNumAnalogOutputs>&
-    analog_output_group_2;
+extern shared::periph::AnalogOutputGroup<kInputLayerDim>& dac_channels;
 
 extern std::array<std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, kNumWeightsPerNeuron>, bindings::kNumNeuronsPerLayer>, bindings::kNumLayers> pots;
 // extern std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>, kNumWeightsPerNeuron>, bindings::kNumNeuronsPerLayer> pots;

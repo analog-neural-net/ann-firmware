@@ -31,8 +31,7 @@ public:
     static constexpr uint8_t kTotalChannels =
         num_external_dacs * num_channels_per_dac;
 
-    DigitalAnalogConverterGroup(DigitalAnalogConverter<num_channels_per_dac>* (
-        &dacs)[num_external_dacs])
+    DigitalAnalogConverterGroup(DigitalAnalogConverter<num_channels_per_dac>* (&dacs)[num_external_dacs])
         : dacs_(dacs) {}
     virtual ~DigitalAnalogConverterGroup() = default;
 

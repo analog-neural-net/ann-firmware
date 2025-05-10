@@ -16,8 +16,8 @@
 
 char temp;
 
-float input_values[3][4] = {
-    {0.0, 0.0, 0.0, 0.0}, {0.0, 0.0, 0.0, 0.0}, {0.0, 0.0, 0.0, 0.0}};
+float input_values[bindings::kInputLayerDim] = 
+    {0.0, 0.0, 0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0, 0.0, 0.0, 0.0};
 
 std::array<float, 10> output_values = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -92,13 +92,11 @@ int main() {
         // bindings::uart_bus.ReceiveBlocking(msg);
 
         for (int i = 0; i < 12; i++) {
-            input_values[i / 4][i % 4] = test_cfg::data[test][1 + i];
+            input_values[i] = test_cfg::data[test][1 + i];
             // bindings::DelayMs(test_cfg::propogation_delay);
         }
 
-        bindings::analog_output_group_0.SetAndLoadAllVoltages(input_values[0]);
-        bindings::analog_output_group_1.SetAndLoadAllVoltages(input_values[1]);
-        bindings::analog_output_group_2.SetAndLoadAllVoltages(input_values[2]);
+        bindings::dac_channels.SetAndLoadAllVoltages(input_values);
 
         bindings::DelayMs(1);
 
@@ -157,6 +155,7 @@ int main() {
 
     light = !light;
     bindings::DelayMs(500);
+    
 
     while (1) {
         bindings::red_led.Set(light);
