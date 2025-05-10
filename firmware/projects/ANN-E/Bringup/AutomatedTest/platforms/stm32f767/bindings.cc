@@ -8,6 +8,7 @@
 #include "gpio.h"
 #include "i2c.h"
 #include "main.h"
+#include "shared/device/dac.hpp"
 #include "usart.h"
 
 
@@ -228,11 +229,18 @@ std::array<std::array<mcp::MCP4461,
                                  mcp::MCP4461(i2c_channels[2][7], 0x2D),
                              }}};
 
-// // single wn block
-
 mcp::MCP4728 dac0(i2c_channels[0][0], 0x60, 2.75F, -2.75F);
 mcp::MCP4728 dac1(i2c_channels[1][0], 0x60, 2.75F, -2.75F);
 mcp::MCP4728 dac2(i2c_channels[2][0], 0x60, 2.75F, -2.75F);
+
+DigitalAnalogConverter<4>* dac_devices[3] = {
+    &dac0,
+    &dac1,
+    &dac2
+};
+
+DigitalAnalogConverterGroup<bindings::kNumDacs, bindings::kNumOutputsPerDac> dacs(dac_devices);
+
 
 // immediately invoed lambda to initialize the weight pots
 auto weight_pots = []() {
@@ -307,12 +315,9 @@ std::array<std::array<std::array<shared::device::DigitalPotentiometer<uint8_t>,
            bindings::kNumLayers>
     pots = device::weight_pots;
 
-shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group_0 =
-    device::dac0;
-shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group_1 =
-    device::dac1;
-shared::periph::AnalogOutputGroup<kNumAnalogOutputs>& analog_output_group_2 =
-    device::dac2;
+
+
+shared::periph::AnalogOutputGroup<kInputLayerDim>& dac_channels = device::dacs;
 
 shared::periph::AnalogInput& analog_input_1 = mcal::analog_input_1;
 shared::periph::AnalogInput& analog_input_2 = mcal::analog_input_2;
@@ -324,6 +329,8 @@ shared::periph::AnalogInput& analog_input_6 = mcal::analog_input_6;
 shared::periph::AnalogInput& analog_input_7 = mcal::analog_input_7;
 shared::periph::AnalogInput& analog_input_8 = mcal::analog_input_8;
 shared::periph::AnalogInput& analog_input_9 = mcal::analog_input_9;
+
+
 
 std::array<shared::periph::AnalogInput*, kOutputLayerSize> adc_channels = {
     &analog_input_0, &analog_input_1, &analog_input_2, &analog_input_3,
